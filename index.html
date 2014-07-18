@@ -13,11 +13,13 @@
 
     <div class="mainContainer">
       <div id="game" ng-controller="GameController">
-        Current Player: {{ currentPlayer }}
+        <center>
+        Current Player: {{ currentPlayer }} <br />
 
         <input type="radio" value="O" name="currentPlayer" ng-model="currentPlayer" />O
         <input type="radio" value="X" name="currentPlayer" ng-model="currentPlayer"/>X
-
+        </center>
+        
       <div>
         <div class="row"> 
           <div class="box" ng-click="playerChoice(0, 0)">{{ board[0][0] }}</div>
