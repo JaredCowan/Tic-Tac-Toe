@@ -31,8 +31,8 @@ body {
 }
 
 @-webkit-keyframes bg-move {
-	0%   { background-position:  100% -560px; }
-	100% { background-position: -350% -460px; }
+	0%   { background-position:  100% -200px; }
+	100% { background-position: -350% -20px; }
 }
 
 @-webkit-keyframes mike-move {

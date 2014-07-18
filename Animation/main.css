@@ -1,7 +1,7 @@
 
 body {
-	background: #F0FCFF url('../Animation/img/island.png') repeat-x 100% -460px;
-	background-size: 780px;
+	background: rgb(35,35,35) url('img/tttlogo.png') repeat-x 100% -460px;
+	background-size: 600px;
 }
 .boat {
 	width: 380px;

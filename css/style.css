@@ -18,13 +18,9 @@
   min-width: 320px;
 }
 #game {
-/*  min-width: 100px;
-  min-height: 100px;
-*/  margin: 0 auto;
+  margin: 0 auto;
   clear: both;
   display: block;
-  /*background-color: black;*/
 }
-
 
 
