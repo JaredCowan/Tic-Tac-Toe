@@ -11,9 +11,20 @@ body {
 .boat::after {
 	-webkit-animation: steam 4s 2s infinite;
 }
-.mike {
-	-webkit-animation: mike-move 6s 6s ease-out forwards,
-	                   mike-float 3.2s infinite;
+
+.b {
+	-webkit-animation: b-move 6s 6s ease-out forwards,
+	                   b-float 3.2s infinite;
+}
+
+.y {
+	-webkit-animation: y-move 6s 6s ease-out forwards,
+	                   y-float 3.2s infinite;
+}
+
+.col {
+	-webkit-animation: col-move 6s 6s ease-out forwards,
+	                   col-float 3.2s infinite;
 }
 
 
@@ -35,11 +46,27 @@ body {
 	100% { background-position: -350% -20px; }
 }
 
-@-webkit-keyframes mike-move {
-	100% { left: 12%; }
+
+@-webkit-keyframes b-move {
+	100% { left: 15%; }
+}
+@-webkit-keyframes b-float {
+	50% { -webkit-transform: rotateZ(5deg) translateY(-5px); }
 }
 
-@-webkit-keyframes mike-float {
+
+@-webkit-keyframes y-move {
+	100% { left: 32%; }
+}
+@-webkit-keyframes y-float {
+	50% { -webkit-transform: rotateZ(5deg) translateY(-5px); }
+}
+
+
+@-webkit-keyframes col-move {
+	100% { left: 50%; }
+}
+@-webkit-keyframes col-float {
 	50% { -webkit-transform: rotateZ(5deg) translateY(-5px); }
 }
 
