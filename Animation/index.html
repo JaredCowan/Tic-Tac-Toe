@@ -1,24 +1,42 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Tugboat Animation</title>
-	<link rel="stylesheet" href="../Animation/main.css">
-	<link rel="stylesheet" href="../Animation/animation.css">
-</head>
-<body>
-	</div>
-  <img class="b"   src="../Animation/img/b.png">
-  <img class="y"   src="../Animation/img/y.png">
-  <img class="col" src="../Animation/img/col.png">
-  <img class="j"   src="../Animation/img/j.png">
-  <img class="a"   src="../Animation/img/a.png">
-  <img class="r"   src="../Animation/img/r.png">
-  <img class="e"   src="../Animation/img/e.png">
-  <img class="d"   src="../Animation/img/d.png">
-  <img class="c"   src="../Animation/img/c.png">
-  <img class="o"   src="../Animation/img/o.png">
-  <img class="w"   src="../Animation/img/w.png">
-  <img class="a2"  src="../Animation/img/a2.png">
-  <img class="n"   src="../Animation/img/n.png">
-</body>
+  <head>
+  	<title>Tic-Tac-Toe Animation</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../Animation/main.css">
+    <link rel="stylesheet" href="../Animation/animation.css">
+    <script>
+      function onePlayer()
+      {
+       window.location.href = "../index.html";
+      }
+   </script>
+  </head>
+  <body>
+  <a href="#">
+    <img class="play oneplayer" src="../Animation/img/oneplayer.png">
+    </a> <br />
+    <a href="#">
+    <img class="play twoplayer" src="../Animation/img/twoplayer.png">
+    </a>
+    <img class="b"         src="../Animation/img/b.png">
+    <img class="y"         src="../Animation/img/y.png">
+    <img class="col"       src="../Animation/img/col.png">
+    <img class="j"         src="../Animation/img/j.png">
+    <img class="a"         src="../Animation/img/a.png">
+    <img class="r"         src="../Animation/img/r.png">
+    <img class="e"         src="../Animation/img/e.png">
+    <img class="d"         src="../Animation/img/d.png">
+    <img class="c"         src="../Animation/img/c.png">
+    <img class="o"         src="../Animation/img/o.png">
+    <img class="w"         src="../Animation/img/w.png">
+    <img class="a2"        src="../Animation/img/a2.png">
+    <img class="n"         src="../Animation/img/n.png">
+
+    <center>
+    <!-- Add an onclick to buttons -->
+    <button onclick="onePlayer();" class="btn btn-primary btn-lg one-player">One Player</button>
+    <button onclick="twoPlayer();"class="btn btn-primary btn-lg two-player"> Two Player </button>
+    </center>
+  </body>
 </html>

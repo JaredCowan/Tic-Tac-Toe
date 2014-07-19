@@ -3,7 +3,11 @@
 /*===============================*/
 
 body {
-	-webkit-animation: bg-move 8s ease-out forwards;
+	-webkit-animation: bg-move 8s ease-in-out forwards;
+}
+.play {
+	-webkit-animation: play-move 2s 8s ease-in-out forwards,
+	                   play-float 2.6s infinite;
 }
 
 /*==============================*/
@@ -12,84 +16,71 @@ body {
 
 /* Letter  B */
 .b {
-	-webkit-animation: b-move 6.85s 6.85s ease-out forwards,
-	                   b-float 3.2s infinite;
+	-webkit-animation: b-move 6s 6s ease-in-out forwards,
+	                   b-float 2.6s infinite;
 }
 /* Letter  Y */
 .y {
-	-webkit-animation: y-move 6.5s 6.5s ease-out forwards,
-	                   y-float 3.2s infinite;
+	-webkit-animation: y-move 6s 6s ease-in-out forwards,
+	                   y-float 2.6s infinite;
 }
 /* Letter  COL: */
 .col {
-	-webkit-animation: col-move 6s 6s ease-out forwards,
-	                   col-float 3.2s infinite;
+	-webkit-animation: col-move 6s 6s ease-in-out forwards,
+	                   col-float 2.6s infinite;
 }
 /* Letter  J */
 .j {
-	-webkit-animation: j-move 6s 6s ease-out forwards,
-	                   j-float 3.2s infinite;
+	-webkit-animation: j-move 6s 6s ease-in-out forwards,
+	                   j-float 2.6s infinite;
 }
 /* Letter  A */
 .a {
-	-webkit-animation: a-move 6s 6s ease-out forwards,
-	                   a-float 3.2s infinite;
+	-webkit-animation: a-move 6s 6s ease-in-out forwards,
+	                   a-float 2.6s infinite;
 }
 /* Letter  R */
 .r {
-	-webkit-animation: r-move 6s 6s ease-out forwards,
-	                   r-float 3.2s infinite;
+	-webkit-animation: r-move 6s 6s ease-in-out forwards,
+	                   r-float 2.6s infinite;
 }
 /* Letter  E */
 .e {
-	-webkit-animation: e-move 6s 6s ease-out forwards,
-	                   e-float 3.2s infinite;
+	-webkit-animation: e-move 6s 6s ease-in-out forwards,
+	                   e-float 2.6s infinite;
 }
 /* Letter  D */
 .d {
-	-webkit-animation: d-move 6s 6s ease-out forwards,
-	                   d-float 3.2s infinite;
+	-webkit-animation: d-move 6s 6s ease-in-out forwards,
+	                   d-float 2.6s infinite;
 }
 /* Letter  C */
 .c {
-	-webkit-animation: c-move 6s 6s ease-out forwards,
-	                   c-float 3.2s infinite;
+	-webkit-animation: c-move 6s 6s ease-in-out forwards,
+	                   c-float 2.6s infinite;
 }
 /* Letter  O */
 .o {
-	-webkit-animation: o-move 6s 6s ease-out forwards,
-	                   o-float 3.2s infinite;
+	-webkit-animation: o-move 6s 6s ease-in-out forwards,
+	                   o-float 2.6s infinite;
 }
 /* Letter  W */
 .w {
-	-webkit-animation: w-move 6s 6s ease-out forwards,
-	                   w-float 3.2s infinite;
+	-webkit-animation: w-move 6s 6s ease-in-out forwards,
+	                   w-float 2.6s infinite;
 }
 /* Letter  A2 */
 .a2 {
-	-webkit-animation: a2-move 6s 6s ease-out forwards,
-	                   a2-float 3.2s infinite;
+	-webkit-animation: a2-move 6s 6s ease-in-out forwards,
+	                   a2-float 2.6s infinite;
 }
 /* Letter  N */
 .n {
-	-webkit-animation: n-move 6s 6s ease-out forwards,
-	                   n-float 3.2s infinite;
+	-webkit-animation: n-move 6s 6s ease-in-out forwards,
+	                   n-float 2.6s infinite;
 }
 
 /*========== END LETTER ANIMATION =================*/
-
-/*	Keyframes - WebKit only
------------------------------------------- */
-
-/*@-webkit-keyframes welcome-rock {
-	50%  { -webkit-transform: rotate(-5deg) translateY(-10px); }
-}
-
-@-webkit-keyframes boatFade {
-	40%,
-	60%  { opacity: 1; }
-	100% { -webkit-transform: translate(-15%, -35%) rotateZ(20deg); }
-}*/
 
 
 /*==============================*/
@@ -100,10 +91,18 @@ body {
 	0%     { background-position: -350%  1200px; }
 	100%   { background-position:  290% -510px; }
 }
+@-webkit-keyframes play-move {
+	100% { left: 32.5%; }
+}
+@-webkit-keyframes play-float {
+	50% { -webkit-transform: scale(1.3, 1.3); }
+}
 
 /*===============================*/
 /*    Start Each CHR keyframe    */
 /*===============================*/
+
+
 /* Letter  B */
 
 @-webkit-keyframes b-move {
@@ -123,7 +122,7 @@ body {
 /* Letter  COL: */
 
 @-webkit-keyframes col-move {
-	100% { left: 18%; }
+	100% { left: 19%; }
 }
 @-webkit-keyframes col-float {
 	50% { -webkit-transform: rotateZ(5deg) translateY(-5px); }
@@ -131,23 +130,23 @@ body {
 /* Letter  J */
 
 @-webkit-keyframes j-move {
-	100% { left: 21%; }
+	100% { left: 22%; }
 }
 @-webkit-keyframes j-float {
-	50% { -webkit-transform: rotateZ(5deg) translateY(-5px); }
+	50% { -webkit-transform: translate(-12%, -15%) rotateZ(5deg) translateY(-5px); }
 }
 /* Letter  A */
 
 @-webkit-keyframes a-move {
-	100% { left: 28%; }
+	100% { left: 29%; }
 }
 @-webkit-keyframes a-float {
-	50% { -webkit-transform: rotateZ(5deg) translateY(-5px); }
+	50% { -webkit-transform: rotateZ(-14deg) translateY(-7px); }
 }
 /* Letter  R */
 
 @-webkit-keyframes r-move {
-	100% { left: 35%; }
+	100% { left: 36%; }
 }
 @-webkit-keyframes r-float {
 	50% { -webkit-transform: rotateZ(5deg) translateY(-5px); }
@@ -155,31 +154,31 @@ body {
 /* Letter  E */
 
 @-webkit-keyframes e-move {
-	100% { left: 42%; }
+	100% { left: 43%; }
 }
 @-webkit-keyframes e-float {
-	50% { -webkit-transform: rotateZ(5deg) translateY(-5px); }
+	50% { -webkit-transform: rotateZ(-14deg) translateY(-4px); }
 }
 /* Letter  D */
 
 @-webkit-keyframes d-move {
-	100% { left: 49%; }
+	100% { left: 50%; }
 }
 @-webkit-keyframes d-float {
-	50% { -webkit-transform: rotateZ(5deg) translateY(-5px); }
+	50% { -webkit-transform: translate(-12%, -15%) rotateZ(5deg) translateY(-5px); }
 }
 /* Letter  C */
 
 @-webkit-keyframes c-move {
-	100% { left: 56%; }
+	100% { left: 57%; }
 }
 @-webkit-keyframes c-float {
-	50% { -webkit-transform: rotateZ(5deg) translateY(-5px); }
+	50% { -webkit-transform: rotateZ(-14deg) translateY(-4px); }
 }
 /* Letter  O */
 
 @-webkit-keyframes o-move {
-	100% { left: 63%; }
+	100% { left: 64%; }
 }
 @-webkit-keyframes o-float {
 	50% { -webkit-transform: rotateZ(5deg) translateY(-5px); }
@@ -187,15 +186,15 @@ body {
 /* Letter  W */
 
 @-webkit-keyframes w-move {
-	100% { left: 70%; }
+	100% { left: 71%; }
 }
 @-webkit-keyframes w-float {
-	50% { -webkit-transform: rotateZ(5deg) translateY(-5px); }
+	50% { -webkit-transform: rotateZ(-14deg) translateY(-4px); }
 }
 /* Letter  A2 */
 
 @-webkit-keyframes a2-move {
-	100% { left: 77%; }
+	100% { left: 78%; }
 }
 @-webkit-keyframes a2-float {
 	50% { -webkit-transform: rotateZ(5deg) translateY(-5px); }
@@ -203,9 +202,9 @@ body {
 /* Letter  N */
 
 @-webkit-keyframes n-move {
-	100% { left: 84%; }
+	100% { left: 85%; }
 }
 @-webkit-keyframes n-float {
-	50% { -webkit-transform: rotateZ(5deg) translateY(-5px); }
+	50% { -webkit-transform: rotateZ(-14deg) translateY(-4px); }
 }
 /*========== END LETTER KEYFRAME =================*/

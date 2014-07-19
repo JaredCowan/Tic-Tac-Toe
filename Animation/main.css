@@ -13,6 +13,7 @@ body {
 .col {
 	width: 50px!important;
 }
+
 .col,
 .b,
 .y,
@@ -30,11 +31,24 @@ body {
 }
 
 img {
-	width: 120px;
-	height: 100px;
+	width:       120px;
+	height:      100px;
 	position: absolute;
-	top: 50%;
-	left: -15%;
+	top:           80%;
+	left:         -15%;
 }
 
+.play {
+  width: 550px;
+  height: 90px;
+  position: absolute;
+}
+.oneplayer {
+  top:    30%;
+  left: -100%;
+}
+.twoplayer {
+  top:    50%;
+  left: -100%;
+}
 
