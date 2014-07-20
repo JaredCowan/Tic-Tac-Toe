@@ -3,10 +3,10 @@
 /*===============================*/
 
 body {
-	-webkit-animation: bg-move 8s ease-in-out forwards;
+	-webkit-animation: bg-move 8s 5s ease-in-out forwards;
 }
 .play {
-	-webkit-animation: play-move 2s 8s ease-in-out forwards,
+	-webkit-animation: play-move 2s 13s ease-in-out forwards,
 	                   play-float 1.8s infinite;
 }
 
@@ -16,67 +16,67 @@ body {
 
 /* Letter  B */
 .b {
-	-webkit-animation: b-move 6s 6s ease-in-out forwards,
+	-webkit-animation: b-move 6s 11s ease-in-out forwards,
 	                   b-float 2.0s infinite;
 }
 /* Letter  Y */
 .y {
-	-webkit-animation: y-move 6s 6s ease-in-out forwards,
+	-webkit-animation: y-move 6s 11s ease-in-out forwards,
 	                   y-float 2.6s infinite;
 }
 /* Letter  COL: */
 .col {
-	-webkit-animation: col-move 6s 6s ease-in-out forwards,
+	-webkit-animation: col-move 6s 11s ease-in-out forwards,
 	                   col-float 1.6s infinite;
 }
 /* Letter  J */
 .j {
-	-webkit-animation: j-move 6s 6s ease-in-out forwards,
+	-webkit-animation: j-move 6s 11s ease-in-out forwards,
 	                   j-float 2.6s infinite;
 }
 /* Letter  A */
 .a {
-	-webkit-animation: a-move 6s 6s ease-in-out forwards,
+	-webkit-animation: a-move 6s 11s ease-in-out forwards,
 	                   a-float 2.6s infinite;
 }
 /* Letter  R */
 .r {
-	-webkit-animation: r-move 6s 6s ease-in-out forwards,
+	-webkit-animation: r-move 6s 11s ease-in-out forwards,
 	                   r-float 2.6s infinite;
 }
 /* Letter  E */
 .e {
-	-webkit-animation: e-move 6s 6s ease-in-out forwards,
+	-webkit-animation: e-move 6s 11s ease-in-out forwards,
 	                   e-float 2.6s infinite;
 }
 /* Letter  D */
 .d {
-	-webkit-animation: d-move 6s 6s ease-in-out forwards,
+	-webkit-animation: d-move 6s 11s ease-in-out forwards,
 	                   d-float 2.6s infinite;
 }
 /* Letter  C */
 .c {
-	-webkit-animation: c-move 6s 6s ease-in-out forwards,
+	-webkit-animation: c-move 6s 11s ease-in-out forwards,
 	                   c-float 2.6s infinite;
 }
 /* Letter  O */
 .o {
-	-webkit-animation: o-move 6s 6s ease-in-out forwards,
+	-webkit-animation: o-move 6s 11s ease-in-out forwards,
 	                   o-float 2.6s infinite;
 }
 /* Letter  W */
 .w {
-	-webkit-animation: w-move 6s 6s ease-in-out forwards,
+	-webkit-animation: w-move 6s 11s ease-in-out forwards,
 	                   w-float 2.6s infinite;
 }
 /* Letter  A2 */
 .a2 {
-	-webkit-animation: a2-move 6s 6s ease-in-out forwards,
+	-webkit-animation: a2-move 6s 11s ease-in-out forwards,
 	                   a2-float 2.6s infinite;
 }
 /* Letter  N */
 .n {
-	-webkit-animation: n-move 6s 6s ease-in-out forwards,
+	-webkit-animation: n-move 6s 11s ease-in-out forwards,
 	                   n-float 2.6s infinite;
 }
 

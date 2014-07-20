@@ -1,9 +1,8 @@
-
 /* Body BackGround IMG Animation */
 
 body {
-	background: rgb(35,35,35) url('img/bigbg.png') repeat-x 100% 800px;
-	background-size: 1100px;
+  background: rgb(35,35,35) url('img/bigbg.png') repeat-x 100% 1000px;
+  background-size: 1100px;
 }
 
 /*==============================*/
@@ -14,19 +13,7 @@ body {
 	width: 50px!important;
 }
 
-.col,
-.b,
-.y,
-.j,
-.a,
-.r,
-.e,
-.d,
-.c,
-.o,
-.w,
-.a,
-.n {
+.col, .b, .y, .j, .a, .r, .e, .d, .c, .o, .w, .a, .n {
 	-webkit-transform: rotateZ(-5deg);
 }
 
