@@ -7,7 +7,7 @@ body {
 }
 .play {
 	-webkit-animation: play-move 2s 8s ease-in-out forwards,
-	                   play-float 2.6s infinite;
+	                   play-float 1.8s infinite;
 }
 
 /*==============================*/
@@ -17,7 +17,7 @@ body {
 /* Letter  B */
 .b {
 	-webkit-animation: b-move 6s 6s ease-in-out forwards,
-	                   b-float 2.6s infinite;
+	                   b-float 2.0s infinite;
 }
 /* Letter  Y */
 .y {
@@ -27,7 +27,7 @@ body {
 /* Letter  COL: */
 .col {
 	-webkit-animation: col-move 6s 6s ease-in-out forwards,
-	                   col-float 2.6s infinite;
+	                   col-float 1.6s infinite;
 }
 /* Letter  J */
 .j {
