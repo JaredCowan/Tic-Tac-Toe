@@ -7,34 +7,37 @@
     <script src="js/script.js"></script>
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/angular.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   </head>
   <body>
-
     <div class="mainContainer">
       <div id="game" ng-controller="GameController">
         <center>
+          <div class="jumbotron">
           Current Player: {{ currentPlayer }} <br />
           <input type="radio" value="O" name="currentPlayer" ng-model="currentPlayer"/> O
           <input type="radio" value="X" name="currentPlayer" ng-model="currentPlayer"/> X
+          </div>
         </center>
         
-      <div>
-        <div class="row"> 
-          <div class="box" ng-click="playerChoice(0, 0)"> {{ board[0][0] }} </div>
-          <div class="box" ng-click="playerChoice(0, 1)"> {{ board[0][1] }} </div>
-          <div class="box" ng-click="playerChoice(0, 2)"> {{ board[0][2] }} </div>
-        </div>
-        
-        <div class="row"> 
-          <div class="box" ng-click="playerChoice(1, 0)"> {{ board[1][0] }} </div>
-          <div class="box" ng-click="playerChoice(1, 1)"> {{ board[1][1] }} </div>
-          <div class="box" ng-click="playerChoice(1, 2)"> {{ board[1][2] }} </div>
-        </div>
-        
-        <div class="row"> 
-          <div class="box" ng-click="playerChoice(2, 0)"> {{ board[2][0] }} </div>
-          <div class="box" ng-click="playerChoice(2, 1)"> {{ board[2][1] }} </div>
-          <div class="box" ng-click="playerChoice(2, 2)"> {{ board[2][2] }} </div>
+        <div>
+          <div class="row"> 
+            <div class="box" ng-click="playerChoice(0, 0)"> {{ board[0][0] }} </div>
+            <div class="box" ng-click="playerChoice(0, 1)"> {{ board[0][1] }} </div>
+            <div class="box" ng-click="playerChoice(0, 2)"> {{ board[0][2] }} </div>
+          </div>
+          
+          <div class="row"> 
+            <div class="box" ng-click="playerChoice(1, 0)"> {{ board[1][0] }} </div>
+            <div class="box" ng-click="playerChoice(1, 1)"> {{ board[1][1] }} </div>
+            <div class="box" ng-click="playerChoice(1, 2)"> {{ board[1][2] }} </div>
+          </div>
+          
+          <div class="row"> 
+            <div class="box" ng-click="playerChoice(2, 0)"> {{ board[2][0] }} </div>
+            <div class="box" ng-click="playerChoice(2, 1)"> {{ board[2][1] }} </div>
+            <div class="box" ng-click="playerChoice(2, 2)"> {{ board[2][2] }} </div>
+          </div>
         </div>
       </div>
     </div>
