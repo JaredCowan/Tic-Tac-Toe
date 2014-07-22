@@ -13,7 +13,8 @@ function TicTacController($scope) {
   $scope.leftScore = 0;
   $scope.rightScore = 0;
 
-  $scope.cells = cells;
+  $scope.cells   = cells;
+  $scope.showbtn =  false;
 
   $scope.drawMark = function(index) {
     if (gameover == false && cells[index] == '') {
@@ -69,12 +70,14 @@ function TicTacController($scope) {
     $scope.leftMessage = $scope.player1Name + " wins!";
     gameover = true;
     $scope.leftScore += 1;
+    $scope.showbtn =  true;
   }
 
   var owin = function () {
     $scope.rightMessage = $scope.player2Name + " wins!";
     gameover = true;
     $scope.rightScore += 1;
+    $scope.showbtn =  true;
   }
 
   $scope.clearBoard = function() {
