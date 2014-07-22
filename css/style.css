@@ -1,26 +1,125 @@
-.box {
-  min-width: 100px;
-  min-height: 100px;
-  background-color: green;
-  border: solid 1px white;
-  display: inline-block;
-  font: 80px sans-serif;
-  text-align: center;
-  vertical-align: center;
-  clear: bottom;
-  padding: 0;
-  margin: 0 auto;
-  float: left;
-}
-.mainContainer {
-  margin: 0 auto;
-  max-width: 320px;
-  min-width: 320px;
-}
-#game {
-  margin: 0 auto;
-  clear: both;
-  display: block;
+body {
+  font-family: Futura;
+  background-color: rgb(35,35,35);
 }
 
+.left {
+  background-color: rgb(35,35,35);
+  width: 250px;
+  height: 100%;
+  float: left;
+  text-align: center;
+  color: #aca090;
+  font-size: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.right {
+  background-color: rgb(35,35,35);
+  width: 250px;
+  height: 100%;
+  float: right;
+  text-align: center;
+  color: #aca090;
+  font-size: 24px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+h1 {
+  font-size: 56px;
+  text-align: center;
+  color: #7f2525;
+}
+
+.board {
+  width: 468px;
+  height: 468px;
+  margin: 0 auto;
+
+}
+
+.innerbox {
+  color: #7f2525;
+  text-align: center;
+  line-height: 125px;
+  font-size: 100px;
+  float: left;
+  width: 150px;
+  height: 150px;
+  background-color: rgb(213,180,2);
+  margin: 3px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.innerbox:hover {
+  background-color: #7f766a;
+}
+
+
+.clear {
+  clear: both;
+}
+
+#left_message, #right_message {
+  margin-top: 400px;
+  color: #aca090;
+}
+
+#p1_name:hover, #p2_name:hover {
+  cursor: pointer;
+  color: #956e6e;
+}
+
+#p1_name, #p2_name {
+  background-color: #7f2525;
+  color: #aca090;
+  border: none;
+  text-align: center;
+  font-family: Helvetica;
+  font-size: 24px;
+  width: 140px;
+  border-radius: 15px;
+}
+
+input:focus {
+  outline: 0;
+}
+
+.reset {
+  width: 250px;
+  height: 35px;
+  border-radius: 8px;
+  background-color: #7f2525;
+  float: clear;
+  margin: 450px auto 0px;
+  line-height: 35px;
+  text-align: center;
+  color: #c4b6a4;
+}
+
+.reset:hover {
+  background-color: #7e3f3f;
+  cursor: pointer;
+  color: #aca090;
+}
+#tttlogo {
+  width: 400px;
+  display: block;
+  margin: 0 auto;
+  margin-right: 10px;
+}
+.player1 {
+  background: url('http://upload.wikimedia.org/wikipedia/commons/thumb/9/95/X11.svg/60px-X11.svg.png') no-repeat center;
+  color: red!important;
+  background-color: rgba(255,0,0,0.3);
+}
+.player2 {
+  color: blue!important;
+  background-color: rgba(0,255,0, 0.7);
+}
 

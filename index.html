@@ -1,42 +1,43 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="">
-  <head>
-    <meta charset="UTF-8">
-    <title> Tic-Tic-Toe </title>
-    <meta name="author" content="Jared Cowan" />
-    <script src="js/script.js"></script>
-    <link rel="stylesheet" href="css/style.css" />
-    <script src="js/angular.js"></script>
-  </head>
-  <body ng-controller="GameController">
+<html>
+<head>
+  <title>Tic-Tac-Toe</title>
+  <script type="text/javascript" src="js/angular.js"></script>
+  <script src="main.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
 
-    <div class="mainContainer">
-      <div id="game">
-        <center>
-          Current Player: {{ currentPlayer }} <br />
-          <input type="radio" value="O" name="currentPlayer" ng-model="currentPlayer"/> O
-          <input type="radio" value="X" name="currentPlayer" ng-model="currentPlayer"/> X
-        </center>
-        
-      <div>
-        <div class="row"> 
-          <div class="box" ng-click="playerChoice(0, 0)"> {{ board[0][0] }} </div>
-          <div class="box" ng-click="playerChoice(0, 1)"> {{ board[0][1] }} </div>
-          <div class="box" ng-click="playerChoice(0, 2)"> {{ board[0][2] }} </div>
-        </div>
-        
-        <div class="row"> 
-          <div class="box" ng-click="playerChoice(1, 0)"> {{ board[1][0] }} </div>
-          <div class="box" ng-click="playerChoice(1, 1)"> {{ board[1][1] }} </div>
-          <div class="box" ng-click="playerChoice(1, 2)"> {{ board[1][2] }} </div>
-        </div>
-        
-        <div class="row"> 
-          <div class="box" ng-click="playerChoice(2, 0)"> {{ board[2][0] }} </div>
-          <div class="box" ng-click="playerChoice(2, 1)"> {{ board[2][1] }} </div>
-          <div class="box" ng-click="playerChoice(2, 2)"> {{ board[2][2] }} </div>
-        </div>
-      </div>
+<body x-ng-app="" x-ng-controller="TicTacController">
+  <div class="left">
+    <br />
+    <br />
+    <p><input type="text" id="p1_name" ng-model="player1Name" ng-init="player1Name = 'Player 1'" ng-click="setName1(player1Name)" ng-keyup="removeFocus1($event)" /><p>
+    <br />
+    <br />
+    <p id="p1_score">{{leftScore}}</p>
+    <p id="left_message">{{leftMessage}}</p>
+  </div>
+  <div class="right">
+    <br />
+    <br />
+    <p><input type="text" id="p2_name" ng-model="player2Name" ng-init="player2Name = 'Player 2'" ng-click="setName2(player2Name)" ng-keyup="removeFocus2($event)"/><p>
+    <br />
+    <br />
+    <p id="p2_score">{{rightScore}}</p>
+    <p id="right_message">{{rightMessage}}</p>
+  </div>
+
+  <div class="board">
+    <img id="tttlogo" src="Animation/img/tttlogo.png">    <div class="innerbox" x-ng-repeat="cell in cells track by $index" ng-click="drawMark($index);" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o'}" >
+      {{cell}}
     </div>
-  </body>
+    <br />
+    <br />
+    <br />
+    <div class="reset" ng-click="clearBoard()">New Game</div>
+  </div>
+
+</body>
+
 </html>
+
