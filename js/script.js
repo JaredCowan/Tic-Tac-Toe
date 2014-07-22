@@ -26,9 +26,12 @@ function GameController($scope) {
     // $scope.rowLast.join().replace(/,/g, '');
     $scope.board[row][col] = $scope.currentPlayer;
     logBoard($scope.board);
-    if ($scope.board[0][0] + $scope.board[0][1] + $scope.board[0][2] == "XXX" || $scope.board[0][0] + $scope.board[0][1] + $scope.board[0][2] == "OOO" || $scope.board[0][0] + $scope.board[1][0] + $scope.board[2][0] == "XXX" || $scope.board[0][0] + $scope.board[1][0] + $scope.board[2][0] == "OOO" || $scope.board[0][1] + $scope.board[1][1] + $scope.board[2][1] == "XXX" || $scope.board[0][2] + $scope.board[1][0] + $scope.board[2][0] == "OOO") {
+    if ($scope.board[0][0] + $scope.board[0][1] + $scope.board[0][2] == "XXX" || $scope.board[1][0] + $scope.board[1][1] + $scope.board[1][2] == "XXX" || $scope.board[2][0] + $scope.board[2][1] + $scope.board[2][2] == "XXX" ) {
       console.log('winner');
-    } else if ($scope.rowLast == "XXX") {
+    } else if ($scope.board[0][0] + $scope.board[1][0] + $scope.board[2][0] == "XXX" || $scope.board[0][1] + $scope.board[1][1] + $scope.board[2][1] == "XXX" || $scope.board[0][2] + $scope.board[1][2] + $scope.board[2][2] == "XXX" ) {
+      console.log('winnerwinnerwinner');
+    } else if (
+      $scope.board[0][0] + $scope.board[1][1] + $scope.board[2][2] == "XXX" || $scope.board[0][2] + $scope.board[1][1] + $scope.board[2][0] == "XXX" ) {
       console.log('winnerwinner');
     }
     // else if ($scope.board[0][0].join() == "X,X,X" || $scope.board[1][0].join() == "X,X,X" || $scope.board[2][0].join() == "X,X,X") {
@@ -36,3 +39,8 @@ function GameController($scope) {
     // }
   };
 }
+
+
+// $scope.board[0][0] + $scope.board[0][1] + $scope.board[0][2] == "OOO" ||
+// $scope.board[1][0] + $scope.board[1][1] + $scope.board[1][2] == "OOO" ||
+// $scope.board[2][0] + $scope.board[2][1] + $scope.board[2][2] == "OOO" 
