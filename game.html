@@ -1,68 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html x-ng-app="TicTacApp">
 <head>
   <title>Tic-Tac-Toe</title>
   <script type="text/javascript" src="js/angular.js"></script>
   <script src="main.js"></script>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css"/>
   <script src='https://cdn.firebase.com/js/client/1.0.17/firebase.js'></script>
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+  <script src="https://cdn.firebase.com/js/client/1.0.17/firebase.js"></script>
+  <script src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js"></script>
 
 </head>
-
-<body x-ng-app="" x-ng-controller="TicTacController">
+<body x-ng-controller="TicTacController">
   <div class="left">
-    <br />
-    <br />
-    <p><input type="text" id="p1_name" ng-model="player1Name" ng-init="player1Name = 'Player 1'" ng-click="setName1(player1Name)" ng-keyup="removeFocus1($event)" /><p>
-    <br />
-    <br />
-    <p id="p1_score">{{leftScore}}</p>
-    <p id="left_message">{{leftMessage}}</p>
+    <br /><br />
+    <p><input type="text" id="p1_name" ng-model="player1Name" ng-init="player1Name = 'Player 1'" ng-click="setName1(player1Name)" ng-keyup="removeFocus1($event)"/><p>
+    <br /><br />
+    <p id="p1_score">Wins:<br/> {{ leftScore }}</p>
+    <p id="left_message">     {{ leftMessage }}</p>
   </div>
+
   <div class="right">
-    <br />
-    <br />
+    <br /><br />
     <p><input type="text" id="p2_name" ng-model="player2Name" ng-init="player2Name = 'Player 2'" ng-click="setName2(player2Name)" ng-keyup="removeFocus2($event)"/><p>
-    <br />
-    <br />
-    <p id="p2_score">{{rightScore}}</p>
-    <p id="right_message">{{rightMessage}}</p>
+    <br /><br />
+    <p id="p2_score">Wins:<br/>{{ rightScore }}</p>
+    <p id="right_message">   {{ rightMessage }}</p>
   </div>
 
   <div class="board">
     <img id="tttlogo" src="Animation/img/tttlogo.png">    <div class="innerbox" x-ng-repeat="cell in cells track by $index" ng-click="drawMark($index);" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o'}" >
       {{cell}}
     </div>
-    <br />
-    <br />
-    <br />
-    <div class="reset" ng-show="showbtn" ng-click="clearBoard()">New Game</div>
+    <br /><br /><br />
+    <div class="reset" ng-show="showbtn" ng-click="clearBoard()"> New Game </div>
     <center>
-    <div id='messagesDiv'></div>
-    <input type='text' id='nameInput' value="{{player1}}" ng-model="player1Name" placeholder='Name'>
-    <input type='text' id='messageInput' value='Message'>
+      <div id='messagesDiv'></div>
+      <input type='text' id='nameInput' value="{{ player1 }}" ng-model="player1Name" placeholder='Name'>
+      <input type='text' id='messageInput' value='Message'>
     </center>
   </div>
-  <script>
-      var myDataRef = new Firebase('https://tlr2iho24op.firebaseio-demo.com/');
-      $('#messageInput').keypress(function (e) {
-        if (e.keyCode == 13) {
-          var name = $('#nameInput').val();
-          var text = $('#messageInput').val();
-          myDataRef.push({name: name, text: text});
-          $('#messageInput').val('');
-        }
-      });
-      myDataRef.on('child_added', function(snapshot) {
-        var message = snapshot.val();
-        displayChatMessage(message.name, message.text);
-      });
-      function displayChatMessage(name, text) {
-        $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
-        $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
-      };
-    </script>
 </body>
 </html>
 

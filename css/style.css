@@ -1,32 +1,30 @@
 body {
-  -webkit-user-select:       none;
   background-color: rgb(35,35,35);
+  -webkit-user-select:       none;
   -moz-user-select:          none;
   -ms-user-select:           none;
   user-select:               none;
   font-family:             Futura;
 }
-
 .left {
   background-color: rgb(35,35,35);
   text-align:              center;
   font-size:                 24px;
   position:              absolute;
-  z-index:                      1;
+  z-index:                      2;
   height:                    100%;
-  color:           rgb(213,180,2);
   width:                    230px;
   float:                     left;
+  color:           rgb(213,180,2);
   left:                         0;
   top:                          0;
 }
-
 .right {
   background-color: rgb(35,35,35);
   text-align:              center;
   font-size:                 24px;
   position:              absolute;
-  z-index:                      1;
+  z-index:                      2;
   height:                    100%;
   color:           rgb(213,180,2);
   width:                    230px;
@@ -34,20 +32,16 @@ body {
   right:                        0;
   top:                          0;
 }
-
 h1 {
   text-align: center;
   font-size:    56px;
   color:     #7f2525;
 }
-
 .board {
-  width:   468px;
-  height:  468px;
-  margin: 0 auto;
-
+  width:       468px;
+  height:      468px;
+  margin:     0 auto;
 }
-
 .innerbox {
   background-color: rgb(213,180,2);
   border-radius:              10px;
@@ -61,40 +55,31 @@ h1 {
   float:                      left;
   width:                     150px;
   -webkit-transition: all 900ms cubic-bezier(0.680, -0.950, 0.265, 1.950);
-  -moz-transition: all 900ms cubic-bezier(0.680, -0.950, 0.265, 1.950);
-  -o-transition: all 900ms cubic-bezier(0.680, -0.950, 0.265, 1.950);
-  transition: all 900ms cubic-bezier(0.680, -0.950, 0.265, 1.950);
+  -moz-transition:    all 900ms cubic-bezier(0.680, -0.950, 0.265, 1.950);
+  -o-transition:      all 900ms cubic-bezier(0.680, -0.950, 0.265, 1.950);
+  transition:         all 900ms cubic-bezier(0.680, -0.950, 0.265, 1.950);
 }
-
-.innerbox:hover {
+.innerbox:focus {
   background-color: #7f766a;
-   -webkit-transform: rotateX(-360deg);
+  -webkit-transform: rotateY(-360deg);
   -webkit-transition-timing-function: cubic-bezier(0.680, -0.950, 0.265, 1.950);
-  -moz-transition-timing-function: cubic-bezier(0.680, -0.950, 0.265, 1.950); 
-  -o-transition-timing-function: cubic-bezier(0.680, -0.950, 0.265, 1.950); 
-  transition-timing-function: cubic-bezier(0.680, -0.950, 0.265, 1.950);
+  -moz-transition-timing-function:    cubic-bezier(0.680, -0.950, 0.265, 1.950); 
+  -o-transition-timing-function:      cubic-bezier(0.680, -0.950, 0.265, 1.950); 
+  transition-timing-function:         cubic-bezier(0.680, -0.950, 0.265, 1.950);
 }
-
-
-.clear {
-  clear: both;
-}
-
 #left_message, #right_message {
   color:       rgb(213,180,2);
   margin-top:           400px;
 }
-
 #p1_name:hover, #p2_name:hover {
   cursor: pointer;
   color:  #956e6e;
-  -webkit-transform: rotateX(-360deg);
+  -webkit-transform: rotateY(-360deg);
   -webkit-transition-timing-function: cubic-bezier(0.680, -0.950, 0.265, 1.950);
-  -moz-transition-timing-function: cubic-bezier(0.680, -0.950, 0.265, 1.950); 
-  -o-transition-timing-function: cubic-bezier(0.680, -0.950, 0.265, 1.950); 
-  transition-timing-function: cubic-bezier(0.680, -0.950, 0.265, 1.950);
+  -moz-transition-timing-function:    cubic-bezier(0.680, -0.950, 0.265, 1.950); 
+  -o-transition-timing-function:      cubic-bezier(0.680, -0.950, 0.265, 1.950); 
+  transition-timing-function:         cubic-bezier(0.680, -0.950, 0.265, 1.950);
 }
-
 #p1_name, #p2_name {
   background-color: #7f2525;
   border-radius:       15px;
@@ -105,15 +90,13 @@ h1 {
   color:     rgb(213,180,2);
   width:              140px;
   -webkit-transition: all 1300ms cubic-bezier(0.680, -0.950, 0.265, 1.950);
-  -moz-transition: all 1300ms cubic-bezier(0.680, -0.950, 0.265, 1.950);
-  -o-transition: all 1300ms cubic-bezier(0.680, -0.950, 0.265, 1.950);
-  transition: all 1300ms cubic-bezier(0.680, -0.950, 0.265, 1.950);
+  -moz-transition:    all 1300ms cubic-bezier(0.680, -0.950, 0.265, 1.950);
+  -o-transition:      all 1300ms cubic-bezier(0.680, -0.950, 0.265, 1.950);
+  transition:         all 1300ms cubic-bezier(0.680, -0.950, 0.265, 1.950);
 }
-
 input:focus {
   outline: 0;
 }
-
 .reset {
   background-color: #7f2525;
   border-radius:        8px;
@@ -131,10 +114,10 @@ input:focus {
   color:            #aca090;
 }
 #tttlogo {
-  margin-right: 10px;
-  display:     block;
-  margin:     0 auto;
-  width:       400px;
+  margin-right:        10px;
+  display:            block;
+  margin:            0 auto;
+  width:              400px;
 }
 .player1 {
   background: url('../Animation/img/tttx.png') no-repeat center;
@@ -151,58 +134,26 @@ input:focus {
   margin-bottom:               5px;
   text-align:                 left;
   overflow:                 hidden;
+  z-index:                       1;
   padding:                    10px;
   border:           8px solid grey;
   height:                    190px;
   width:                  relative;
   color:            rgb(213,180,2);
 }
-
 #nameInput {
-  background-color: rgb(35,35,35);
-  border:                    none;
-  color:           rgb(213,180,2);
-  width:                      26%;
+  background-color:  rgb(35,35,35);
+  border:                     none;
+  color:            rgb(213,180,2);
+  width:                       26%;
 }
-
 #messageInput {
-  background-color: rgb(35,35,35);
-  border:                    none;
-  color:           rgb(213,180,2);
-  width:                      68%;
+  background-color:  rgb(35,35,35);
+  border:                     none;
+  color:            rgb(213,180,2);
+  width:                       68%;
 }
-#nameInput:hover, #messageInput:hover, #nameInput:focus, #messageInput:focus{
+#nameInput:hover, #messageInput:hover, 
+#nameInput:focus, #messageInput:focus{
   border: 1px solid rgb(213,180,2);
 }
-
-.innerbox > div:first-child  {
--webkit-transform: rotateX(90deg) translateZ(200px);
--moz-transform: rotateX(90deg) translateZ(200px);
-}
-
-.innerbox > div:nth-child(2) {
--webkit-transform: translateZ(200px);
--moz-transform: translateZ(200px);
-}
-
-.innerbox > div:nth-child(3) {
--webkit-transform: rotateY(90deg) translateZ(200px);
--moz-transform: rotateY(90deg) translateZ(200px);
-text-align: center;
-}
-
-.innerbox > div:nth-child(4) {
--webkit-transform: rotateY(180deg) translateZ(200px);
--moz-transform: rotateY(180deg) translateZ(200px);
-}
-
-.innerbox > div:nth-child(5) {
--webkit-transform: rotateY(-90deg) translateZ(200px);
--moz-transform: rotateY(-90deg) translateZ(200px);
-}
-
-.innerbox > div:nth-child(6) {
--webkit-transform: rotateX(-90deg) rotate(180deg) translateZ(200px);
--moz-transform: rotateX(-90deg) rotate(180deg) translateZ(200px);
-}
-
