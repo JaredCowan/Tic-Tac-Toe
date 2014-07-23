@@ -49,42 +49,20 @@ TicTacApp.controller('TicTacController', function ($scope) {
   $scope.removeFocus1  = function(key) { if (key.keyCode  == 13) { key.target.blur(); }}
   $scope.removeFocus2  = function(key) { if (key.keyCode  == 13) { key.target.blur(); }}
 
-  var xwin = function () {
-    $scope.leftMessage = $scope.player1Name + " wins!";
-    gameover           =  true;
-    $scope.leftScore  +=     1;
-    $scope.showbtn     =  true;
-  }
+  // SHOW WIN/LOSS DATA -- WIN/LOSS 'SCORE' && SHOW/HIDE 'PLAYAGAIN' BUTTON.
+  var xwin = function() { $scope.leftMessage  = $scope.player1Name + " wins!"; gameover =  true; $scope.leftScore  += 1; $scope.showbtn = true; }
+  var owin = function() { $scope.rightMessage = $scope.player2Name + " wins!"; gameover =  true; $scope.rightScore += 1; $scope.showbtn = true; }
 
-  var owin = function () {
-    $scope.rightMessage = $scope.player2Name + " wins!";
-    gameover            = true;
-    $scope.rightScore  +=    1;
-    $scope.showbtn      = true;
-  }
+  // CLEARBOARD FUNCTION FOR 'NEWGAME' BUTTON ON GAME.HTML. CLEARS EVERYTHING EXCEPT FOR WIN/LOSS COUNT AND PLAYER NAMES.
+  $scope.clearBoard     = function() { for (var j = 0; j < cells.length; j++) { $scope.cells[j]     = ''; }
+    $scope.leftMessage  = ""; $scope.rightMessage = ""; currentMark = 'o'; var empty =  true; moves =  0;
+    gameover            = false; grid  = [[ "" , "" , "" ], [ "" , "" , "" ], [ "" , "" , "" ]]; };
 
-  $scope.clearBoard   = function() {
-    for (var j = 0; j < cells.length; j++) {
-      $scope.cells[j] = '';
-    }
-    $scope.leftMessage  =    "";
-    $scope.rightMessage =    "";
-    currentMark         =   'o';
-    var empty           =  true;
-    moves               =     0;
-    gameover            = false;
-    grid                = [
-        [ "" , "" , "" ],
-        [ "" , "" , "" ],
-        [ "" , "" , "" ]
-    ];
-  };
   // FIREBASE CHAT BOX ON GAME.HTML
-var myDataRef = new Firebase('https://tictactoe1.firebaseio.com/chat');
-  $('#messageInput').keypress(function (e) { if (e.keyCode == 13) { var name = $('#nameInput').val(); var text = $('#messageInput').val();
-      myDataRef.push({name: name, text: text}); $('#messageInput').val(''); }});
-      myDataRef.on('child_added', function(snapshot) { var message = snapshot.val(); displayChatMessage(message.name, message.text); });
-  function displayChatMessage(name, text) { $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
-    $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight; };})
-// END FIREBASE CHAT BOX
-
+  var myDataRef = new Firebase('https://tictactoe1.firebaseio.com/chat');
+    $('#messageInput').keypress(function (e) { if (e.keyCode == 13) { var name = $('#nameInput').val(); var text = $('#messageInput').val();
+        myDataRef.push({name: name, text: text}); $('#messageInput').val(''); }});
+        myDataRef.on('child_added', function(snapshot) { var message = snapshot.val(); displayChatMessage(message.name, message.text); });
+    function displayChatMessage(name, text) { $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
+      $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight; };})
+  // END FIREBASE CHAT BOX
