@@ -9,12 +9,11 @@
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
   <script src="https://cdn.firebase.com/js/client/1.0.17/firebase.js"></script>
   <script src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js"></script>
-
 </head>
 <body x-ng-controller="TicTacController">
   <div class="left">
     <br /><br />
-    <p><input type="text" id="p1_name" ng-model="player1Name" ng-init="player1Name = 'Player 1'" ng-click="setName1(player1Name)" ng-keyup="removeFocus1($event)"/><p>
+    <p id="experiment"><input type="text" id="p1_name" ng-model="player1Name" ng-init="player1Name = 'Player 1'" ng-click="setName1(player1Name)" ng-keyup="removeFocus1($event)"/><p>
     <br /><br />
     <p id="p1_score">Wins:<br/> {{ leftScore }}</p>
     <p id="left_message">     {{ leftMessage }}</p>
@@ -29,7 +28,7 @@
   </div>
 
   <div class="board">
-    <img id="tttlogo" src="Animation/img/tttlogo.png">    <div class="innerbox" x-ng-repeat="cell in cells track by $index" ng-click="drawMark($index);" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o'}" >
+    <img id="tttlogo" src="Animation/img/tttlogo.png"> <div class="innerbox" x-ng-repeat="cell in cells track by $index" ng-click="drawMark($index);" ng-mouseenter="hover = true" ng-mouseleave="hover = false" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o', 'playerHover': hover}">
       {{cell}}
     </div>
     <br /><br /><br />

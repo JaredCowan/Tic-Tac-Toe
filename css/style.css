@@ -50,7 +50,7 @@ h1 {
   font-size:                 100px;
   height:                    150px;
   margin:                      3px;
-  cursor:                  pointer;
+  cursor:                  auto;
   color:               transparent;
   float:                      left;
   width:                     150px;
@@ -58,6 +58,9 @@ h1 {
   -moz-transition:    all 900ms cubic-bezier(0.680, -0.950, 0.265, 1.950);
   -o-transition:      all 900ms cubic-bezier(0.680, -0.950, 0.265, 1.950);
   transition:         all 900ms cubic-bezier(0.680, -0.950, 0.265, 1.950);
+}
+.innerbox:hover {
+
 }
 .innerbox:focus {
   background-color: #7f766a;
@@ -72,7 +75,7 @@ h1 {
   margin-top:           400px;
 }
 #p1_name:hover, #p2_name:hover {
-  cursor: pointer;
+  cursor: auto;
   color:  #956e6e;
   -webkit-transform: rotateY(-360deg);
   -webkit-transition-timing-function: cubic-bezier(0.680, -0.950, 0.265, 1.950);
@@ -121,13 +124,19 @@ input:focus {
 }
 .player1 {
   background: url('../Animation/img/tttx.png') no-repeat center;
-  color: transparent!important;
+  color:        transparent!important;
   background-color: rgba(255,0,0,0.3);
 }
 .player2 {
   background: url('../Animation/img/ttto.png') no-repeat center;
   color: transparent!important;
   background-color: rgba(0,255,0, 0.7);
+}
+.playerHover {
+  background: url('../Animation/img/mtrc.png') no-repeat center;
+  background-color: rgb(213,180,2);
+  background-size:     110px 110px;
+  color:     transparent!important;
 }
 #messagesDiv {
   background-color:  rgb(35,35,35);
@@ -139,7 +148,7 @@ input:focus {
   border:           8px solid grey;
   height:                    190px;
   width:                  relative;
-  color:            rgb(213,180,2);
+  color:            rgb(213,150,2);
 }
 #nameInput {
   background-color:  rgb(35,35,35);
