@@ -8,7 +8,13 @@
     <link rel="stylesheet" href="Animation/loading.css">
     <!-- Images and animation need time to load -->
     <script>
-    
+      var html = document.getElementsByTagName('html')[0];
+      var removeLoading = function() {
+      setTimeout(function() {
+      html.className = html.className.replace(/loading/, '');
+      }, 3000);
+      };
+      removeLoading();
     </script>
   </head>
   <body class="experiment">
