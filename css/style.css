@@ -142,7 +142,7 @@ input:focus {
   border-radius:        8px;
   line-height:         35px;
   text-align:        center;
-  margin:              10px;
+  margin:     10px 0 24px 0;
   height:              35px;
   color:            #c4b6a4;
   width:              250px;
@@ -157,7 +157,6 @@ input:focus {
   display:            inline-block;
   margin:            0 auto;
   width:              400px;
-  /*margin-right:        34%;*/
 }
 .player1 {
   background: url('../Animation/img/tttx.png') no-repeat center;

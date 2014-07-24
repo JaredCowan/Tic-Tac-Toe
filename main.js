@@ -55,7 +55,7 @@ TicTacApp.controller('TicTacController', function ($scope, $firebase) {
       owin(); } else if (moves == 9) {
       $scope.leftMessage  = "It's a draw..."; $scope.rightMessage = "It's a draw...";
       var messagebox      =                       document.getElementById('message');
-      gameover            = true;
+      $scope.gameover     = true;
     }
   }
 
@@ -72,7 +72,7 @@ TicTacApp.controller('TicTacController', function ($scope, $firebase) {
   // CLEARBOARD FUNCTION FOR 'NEWGAME' BUTTON ON GAME.HTML. CLEARS EVERYTHING EXCEPT FOR WIN/LOSS COUNT AND PLAYER NAMES.
   $scope.clearBoard     = function() { for (var j = 0; j < cells.length; j++) { $scope.cells[j]     = ''; }
     $scope.leftMessage  = ""; $scope.rightMessage = ""; currentMark = 'o'; var empty =  true; $scope.moves =  0;
-    gameover            = false; grid  = [[ "" , "" , "" ], [ "" , "" , "" ], [ "" , "" , "" ]]; };
+    $scope.gameover     = false; grid  = [[ "" , "" , "" ], [ "" , "" , "" ], [ "" , "" , "" ]]; };
 
   // FIREBASE CHAT BOX ON GAME.HTML
   var myDataRef = new Firebase('https://tictactoe1.firebaseio.com/chat');
