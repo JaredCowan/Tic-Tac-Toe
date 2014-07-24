@@ -1,7 +1,8 @@
 var TicTacApp = angular.module('TicTacApp', ["firebase"]);
-TicTacApp.controller('TicTacController', function ($scope) {
+TicTacApp.controller('TicTacController', function ($scope, $firebase) {
   // var playerMoves = new Firebase("https://tictactoe1.firebaseio.com/board");
-      
+              
+
   // INITIATE GAME CELLS AND AND GRID LAYOUT
   var cells      = ['','','','','','','','',''];
   grid           = [
@@ -9,7 +10,7 @@ TicTacApp.controller('TicTacController', function ($scope) {
       [ "" , "" , "" ],
       [ "" , "" , "" ]
   ];
-  // $scope.turn = true;
+  $scope.turn1 = true; // Sets 'x' as true on start for "your turn" image to show.
   // INITIATES GENERAL GAME BOOLEANS, VALUES AND VARIABLES FOR 'MOVES' 'GAMEOVER' 'SCORE' 'CELLS' 'EMPTY'
   var currentMark   = 'o'; var empty         = true; moves         =      0; gameover       =  false;
   $scope.leftScore  =   0; $scope.rightScore =    0; $scope.cells  =  cells; $scope.showbtn =  false;
@@ -20,6 +21,8 @@ TicTacApp.controller('TicTacController', function ($scope) {
     if (gameover == false && cells[index] == '') {
       // document.getElementById('rightDiv').style.background = 'red';
       if (currentMark == 'o') {
+        $scope.turn1 = false;
+        $scope.turn2 = true;
         $scope.cells[index]     = 'x';
         currentMark             = 'x';
         // rgba(255,0,0,0.3) 
@@ -29,6 +32,8 @@ TicTacApp.controller('TicTacController', function ($scope) {
       } else {
         $scope.cells[index]     = 'o';
         currentMark             = 'o';
+        $scope.turn1 = true;
+        $scope.turn2 = false;
         moves                      ++;
         document.getElementById('rightDiv').style.background = "rgba(100,8,162,0.7)";
         document.getElementById('leftDiv').style.background = "rgba(70,162,8,0.7)";

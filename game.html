@@ -14,7 +14,8 @@
 <body x-ng-controller="TicTacController" class="experiment">
   <div class="left" id="leftDiv">
     <br /><br />
-    <!-- <div id="p1turn"></div> -->
+    <div id="p1turn" ng-show="turn1"></div>
+
     <p><input type="text" id="p1_name" ng-model="player1Name" ng-init="player1Name = 'Player 1'" ng-click="setName1(player1Name)" ng-keyup="removeFocus1($event)"/><p>
     <br /><br />
     <p id="p1_score">Wins:<br/> {{ leftScore }}</p>
@@ -23,6 +24,7 @@
 
   <div class="right" id="rightDiv">
     <br /><br />
+    <div id="p2turn" ng-show="turn2"></div>
     <p><input type="text" id="p2_name" ng-model="player2Name" ng-init="player2Name = 'Player 2'" ng-click="setName2(player2Name)" ng-keyup="removeFocus2($event)"/></p>
     <br /><br />
     <p id="p2_score">Wins:<br/>{{ rightScore }}</p>

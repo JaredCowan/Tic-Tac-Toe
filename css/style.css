@@ -39,6 +39,9 @@ h1 {
   font-size:    56px;
   color:     #7f2525;
 }
+p {
+  margin-top: -3px;
+}
 .board {
   width:       468px;
   height:      468px;
@@ -107,13 +110,15 @@ h1 {
 #p2_name {
   background-color: rgb(100,8,162);
 }
-/*#p1turn {
-  background-image: url('http://etereman.com/remanu/wp-content/uploads/2012/06/YourTurnArrow.png');
-  background-size: 30px 15px;
-  height:               20px;
-  margin:             0 auto;
-  width:                35px;
-}*/
+#p1turn, #p2turn {
+  background: url('http://etereman.com/remanu/wp-content/uploads/2012/06/YourTurnArrow.png') no-repeat center;
+  background-size:  140px 120px;
+  height:                 150px;
+  margin:                0 auto;
+  width:                  250px;
+  z-index:                    1;
+  margin-bottom:          -19px;
+}
 input:focus {
   outline: 0;
 }
@@ -169,7 +174,7 @@ input:focus {
   height:                    190px;
   color:            rgb(213,150,2);
 }
-/*input#myinput::-webkit-input-placeholder,
+input#myinput::-webkit-input-placeholder,
 input#myinput::-moz-placeholder,
 input#myinput:-moz-placeholder     { 
   background-color:          #000; 
@@ -190,7 +195,7 @@ input[type="text"] {
   width:           370px; 
   color:  rgb(213,180,2);
   font: 14px/14px 'Arial', Helvetica, sans-serif;
-}*/
+}
 #messageInput:hover, #messageInput:focus {
   border: 1px solid rgb(213,180,2);
 }
