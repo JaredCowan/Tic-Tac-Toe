@@ -12,7 +12,7 @@ var TTTref = new Firebase("https://tictactoe1.firebaseio.com/remoteCellList");
   ];
 
   $scope.movesCount = $firebase(new Firebase("https://tictactoe1.firebaseIO.com/movesCount"));
-  $scope.remoteCellList = $firebase(new Firebase("https://tictactoe1.firebaseIO.com" + '/remoteCellList' + Math.floor(Math.random() * 101))) ;
+  $scope.remoteCellList = $firebase(new Firebase("https://tictactoe1.firebaseIO.com/remoteCellList" + Math.floor(Math.random() * 101))) ;
   $scope.remoteCellList.$bind($scope, "grid");
   $scope.$watch('grid', function() {
     console.log('Model changed!') ;
@@ -22,9 +22,9 @@ var TTTref = new Firebase("https://tictactoe1.firebaseio.com/remoteCellList");
   thisCell.cells = "x" ;
       console.log("Cell is now: " + thisCell.cells) ;
   console.log($scope.movesCount) ;
-    // $scope.movesCount = $scope.movesCount + 1 ;
+    $scope.movesCount = $scope.movesCount + 1 ;
     console.log(TTTRef.movesCounter);
-    $scope.movesCounter.$set({movesCounter: $scope.movesCount}) ;
+    $scope.movesCount.$set({movesCount: $scope.movesCount});
   }
 
 
