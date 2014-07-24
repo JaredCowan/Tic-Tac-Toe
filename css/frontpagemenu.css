@@ -97,6 +97,10 @@
     background: url('../Animation/img/a.png') no-repeat;
     background-size: 200px  200px;
 }
+.firstBox {
+    background:       url('images/tt-menu.png');
+    background-size:               200px  200px;
+}
 
 .cube {
     -webkit-transition: -webkit-transform 1s linear;
