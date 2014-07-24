@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="css/touch.css" />
   <script src='https://cdn.firebase.com/js/client/1.0.17/firebase.js'></script>
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
-  <script src="https://cdn.firebase.com/js/client/1.0.17/firebase.js"></script>
   <script src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js"></script>
 </head>
 <body x-ng-controller="TicTacController" class="experiment">
@@ -16,20 +15,27 @@
     <br /><br />
     <div id="p1turn" ng-show="turn1"></div>
 
-    <p><input type="text" id="p1_name" ng-model="player1Name" ng-init="player1Name = 'Player 1'" ng-click="setName1(player1Name)" ng-keyup="removeFocus1($event)"/><p>
+    <p><input type="text" id="p1_name" ng-model="player1Name" ng-init="player1Name = 'Player 1'" ng-click="setName1(player1Name)" ng-keyup="removeFocus1($event)" Placeholder="Player 1"/>
+    <p>
     <br /><br />
     <p id="p1_score">Wins:<br/> {{ leftScore }}</p>
     <p id="left_message">     {{ leftMessage }}</p>
   </div>
 
   <div class="right" id="rightDiv">
-    <br /><br />
     <div id="p2turn" ng-show="turn2"></div>
-    <p><input type="text" id="p2_name" ng-model="player2Name" ng-init="player2Name = 'Player 2'" ng-click="setName2(player2Name)" ng-keyup="removeFocus2($event)"/></p>
+    <br /><br />
+    <p><input type="text" id="p2_name" ng-model="player2Name" ng-init="player2Name = 'Player 2'" ng-click="setName2(player2Name)" ng-keyup="removeFocus2($event)" placeholder="Player 2"/>
+    </p>
     <br /><br />
     <p id="p2_score">Wins:<br/>{{ rightScore }}</p>
     <p id="right_message">   {{ rightMessage }}</p>
+    {{ moves }}
   </div>
+  <center>
+    <img id="tttlogo" src="Animation/img/tttlogo.png"><br />
+    <div class="reset" ng-show="showbtn" ng-hide="moves <" ng-click="clearBoard()"> New Game </div>
+  </center>
     <article class="viewport">
     <section class="cube">
         <div class="board">
@@ -66,7 +72,6 @@
 </article>
 
     <br /><br /><br />
-    <div class="reset" ng-show="showbtn" ng-click="clearBoard()"> New Game </div>
   
       <div id='messagesDiv'>
     </div>
