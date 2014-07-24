@@ -5,40 +5,75 @@
   <script type="text/javascript" src="js/angular.js"></script>
   <script src="main.js"></script>
   <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/touch.css" />
   <script src='https://cdn.firebase.com/js/client/1.0.17/firebase.js'></script>
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
   <script src="https://cdn.firebase.com/js/client/1.0.17/firebase.js"></script>
   <script src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js"></script>
 </head>
-<body x-ng-controller="TicTacController">
-  <div class="left">
+<body x-ng-controller="TicTacController" class="experiment">
+  <div class="left" id="leftDiv">
     <br /><br />
-    <p id="experiment"><input type="text" id="p1_name" ng-model="player1Name" ng-init="player1Name = 'Player 1'" ng-click="setName1(player1Name)" ng-keyup="removeFocus1($event)"/><p>
+    <!-- <div id="p1turn"></div> -->
+    <p><input type="text" id="p1_name" ng-model="player1Name" ng-init="player1Name = 'Player 1'" ng-click="setName1(player1Name)" ng-keyup="removeFocus1($event)"/><p>
     <br /><br />
     <p id="p1_score">Wins:<br/> {{ leftScore }}</p>
     <p id="left_message">     {{ leftMessage }}</p>
   </div>
 
-  <div class="right">
+  <div class="right" id="rightDiv">
     <br /><br />
-    <p><input type="text" id="p2_name" ng-model="player2Name" ng-init="player2Name = 'Player 2'" ng-click="setName2(player2Name)" ng-keyup="removeFocus2($event)"/><p>
+    <p><input type="text" id="p2_name" ng-model="player2Name" ng-init="player2Name = 'Player 2'" ng-click="setName2(player2Name)" ng-keyup="removeFocus2($event)"/></p>
     <br /><br />
     <p id="p2_score">Wins:<br/>{{ rightScore }}</p>
     <p id="right_message">   {{ rightMessage }}</p>
   </div>
-
-  <div class="board">
-    <img id="tttlogo" src="Animation/img/tttlogo.png"> <div class="innerbox" x-ng-repeat="cell in cells track by $index" ng-click="drawMark($index);" ng-mouseenter="hover = true" ng-mouseleave="hover = false" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o', 'playerHover': hover}">
+    <article class="viewport">
+    <section class="cube">
+        <div class="board">
+        <div class="innerbox" x-ng-repeat="cell in cells track by $index" ng-click="drawMark($index);" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o'}">
       {{cell}}
     </div>
+    </div>
+        <div class="board">
+        <div class="innerbox" x-ng-repeat="cell in cells track by $index" ng-click="drawMark($index);" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o'}">
+      {{cell}}
+    </div>
+    </div>
+        <div class="board">
+        <div class="innerbox" x-ng-repeat="cell in cells track by $index" ng-click="drawMark($index);" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o'}">
+      {{cell}}
+    </div>
+    </div>
+        <div class="board">
+        <div class="innerbox" x-ng-repeat="cell in cells track by $index" ng-click="drawMark($index);" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o'}">
+      {{cell}}
+    </div>
+    </div>
+        <div class="board">
+        <div class="innerbox" x-ng-repeat="cell in cells track by $index" ng-click="drawMark($index);" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o'}">
+      {{cell}}
+    </div>
+    </div>
+        <div class="board">
+        <div class="innerbox" x-ng-repeat="cell in cells track by $index" ng-click="drawMark($index);" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o'}">
+      {{cell}}
+    </div>
+    </div>
+    </section>
+</article>
+
     <br /><br /><br />
     <div class="reset" ng-show="showbtn" ng-click="clearBoard()"> New Game </div>
+  
+      <div id='messagesDiv'>
+    </div>
     <center>
-      <div id='messagesDiv'></div>
-      <input type='text' id='nameInput' value="{{ player1 }}" ng-model="player1Name" placeholder='Name'>
-      <input type='text' id='messageInput' value='Message'>
-    </center>
+      <input type='text' id='messageInput' placeholder='Message'>
+      </center>
   </div>
+    </div>
+  <script src="js/touch.js"></script>
 </body>
 </html>
 

@@ -5,14 +5,16 @@ body {
   -ms-user-select:           none;
   user-select:               none;
   font-family:             Futura;
+  margin-top:                70px;
+  margin-bottom:             40px!important;
 }
 .left {
-  background-color: rgb(35,35,35);
+  background-color: rgba(70,162,8,0.7); /*rgba(255,0,0,0.3)*/
   text-align:              center;
   font-size:                 24px;
   position:              absolute;
   z-index:                      2;
-  height:                    100%;
+  height:                    116%;
   width:                    230px;
   float:                     left;
   color:           rgb(213,180,2);
@@ -20,12 +22,12 @@ body {
   top:                          0;
 }
 .right {
-  background-color: rgb(35,35,35);
+  background-color: rgba(100,8,162,0.7);
   text-align:              center;
   font-size:                 24px;
   position:              absolute;
   z-index:                      2;
-  height:                    100%;
+  height:                    116%;
   color:           rgb(213,180,2);
   width:                    230px;
   float:                    right;
@@ -50,7 +52,7 @@ h1 {
   font-size:                 100px;
   height:                    150px;
   margin:                      3px;
-  cursor:                  auto;
+  cursor:                     auto;
   color:               transparent;
   float:                      left;
   width:                     150px;
@@ -60,10 +62,13 @@ h1 {
   transition:         all 900ms cubic-bezier(0.680, -0.950, 0.265, 1.950);
 }
 .innerbox:hover {
-
+/*  background: url('../Animation/img/mtrc.png') no-repeat center;
+  background-color: rgb(213,180,2);
+  background-size:     110px 110px;
+  color:     transparent!important;*/
 }
 .innerbox:focus {
-  background-color: #7f766a;
+  background-color:           #7f766a;
   -webkit-transform: rotateY(-360deg);
   -webkit-transition-timing-function: cubic-bezier(0.680, -0.950, 0.265, 1.950);
   -moz-transition-timing-function:    cubic-bezier(0.680, -0.950, 0.265, 1.950); 
@@ -75,7 +80,7 @@ h1 {
   margin-top:           400px;
 }
 #p1_name:hover, #p2_name:hover {
-  cursor: auto;
+  cursor:    auto;
   color:  #956e6e;
   -webkit-transform: rotateY(-360deg);
   -webkit-transition-timing-function: cubic-bezier(0.680, -0.950, 0.265, 1.950);
@@ -84,9 +89,8 @@ h1 {
   transition-timing-function:         cubic-bezier(0.680, -0.950, 0.265, 1.950);
 }
 #p1_name, #p2_name {
-  background-color: #7f2525;
-  border-radius:       15px;
   font-family:    Helvetica;
+  border-radius:       15px;
   text-align:        center;
   font-size:           24px;
   border:              none;
@@ -97,6 +101,19 @@ h1 {
   -o-transition:      all 1300ms cubic-bezier(0.680, -0.950, 0.265, 1.950);
   transition:         all 1300ms cubic-bezier(0.680, -0.950, 0.265, 1.950);
 }
+#p1_name {
+  background-color: #7f2525;
+}
+#p2_name {
+  background-color: rgb(100,8,162);
+}
+/*#p1turn {
+  background-image: url('http://etereman.com/remanu/wp-content/uploads/2012/06/YourTurnArrow.png');
+  background-size: 30px 15px;
+  height:               20px;
+  margin:             0 auto;
+  width:                35px;
+}*/
 input:focus {
   outline: 0;
 }
@@ -124,13 +141,13 @@ input:focus {
 }
 .player1 {
   background: url('../Animation/img/tttx.png') no-repeat center;
-  color:        transparent!important;
   background-color: rgba(255,0,0,0.3);
+  color:        transparent!important;
 }
 .player2 {
   background: url('../Animation/img/ttto.png') no-repeat center;
-  color: transparent!important;
-  background-color: rgba(0,255,0, 0.7);
+  background-color: rgba(100,8,162,0.7);
+  color:          transparent!important;
 }
 .playerHover {
   background: url('../Animation/img/mtrc.png') no-repeat center;
@@ -142,27 +159,38 @@ input:focus {
   background-color:  rgb(35,35,35);
   margin-bottom:               5px;
   text-align:                 left;
+  width:                     500px;
+  position:               relative;
   overflow:                 hidden;
-  z-index:                       1;
   padding:                    10px;
+  z-index:                       5;
+  margin:                   0 auto;
   border:           8px solid grey;
   height:                    190px;
-  width:                  relative;
   color:            rgb(213,150,2);
 }
-#nameInput {
-  background-color:  rgb(35,35,35);
-  border:                     none;
+/*input#myinput::-webkit-input-placeholder,
+input#myinput::-moz-placeholder,
+input#myinput:-moz-placeholder     { 
+  background-color:          #000; 
+  opacity:                      1;
+  color:           rgb(213,180,2);
+} 
+input#myinput::-ms-input-placeholder { 
+  background-color:           #000; 
   color:            rgb(213,180,2);
-  width:                       26%;
 }
-#messageInput {
-  background-color:  rgb(35,35,35);
-  border:                     none;
-  color:            rgb(213,180,2);
-  width:                       68%;
-}
-#nameInput:hover, #messageInput:hover, 
-#nameInput:focus, #messageInput:focus{
+input[type="text"] {
+  background-color: #000;
+  margin-top:        4px;
+  text-align:       left;
+  padding:      12px 5px;
+  border:           none;
+  height:           16px;
+  width:           370px; 
+  color:  rgb(213,180,2);
+  font: 14px/14px 'Arial', Helvetica, sans-serif;
+}*/
+#messageInput:hover, #messageInput:focus {
   border: 1px solid rgb(213,180,2);
 }

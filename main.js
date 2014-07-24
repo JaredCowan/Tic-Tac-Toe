@@ -1,14 +1,15 @@
 var TicTacApp = angular.module('TicTacApp', ["firebase"]);
 TicTacApp.controller('TicTacController', function ($scope) {
-
+  // var playerMoves = new Firebase("https://tictactoe1.firebaseio.com/board");
+      
   // INITIATE GAME CELLS AND AND GRID LAYOUT
-  var cells         = ['','','','','','','','',''];
-  grid              = [
+  var cells      = ['','','','','','','','',''];
+  grid           = [
       [ "" , "" , "" ],
       [ "" , "" , "" ],
       [ "" , "" , "" ]
   ];
-
+  // $scope.turn = true;
   // INITIATES GENERAL GAME BOOLEANS, VALUES AND VARIABLES FOR 'MOVES' 'GAMEOVER' 'SCORE' 'CELLS' 'EMPTY'
   var currentMark   = 'o'; var empty         = true; moves         =      0; gameover       =  false;
   $scope.leftScore  =   0; $scope.rightScore =    0; $scope.cells  =  cells; $scope.showbtn =  false;
@@ -17,14 +18,20 @@ TicTacApp.controller('TicTacController', function ($scope) {
   // DIVIDES 'GRID' AND 'CELLS' FOR INDEXES TO BE CHECKED FOR WINNING COMBINATIONS BY 'EVALUATEWIN()'.
   $scope.drawMark = function(index) {
     if (gameover == false && cells[index] == '') {
+      // document.getElementById('rightDiv').style.background = 'red';
       if (currentMark == 'o') {
         $scope.cells[index]     = 'x';
         currentMark             = 'x';
+        // rgba(255,0,0,0.3) 
+        document.getElementById('leftDiv').style.background = "rgba(255,0,0,0.3)";
+        document.getElementById('rightDiv').style.background = "rgba(70,162,8,0.7)";
         moves                      ++;
       } else {
         $scope.cells[index]     = 'o';
         currentMark             = 'o';
         moves                      ++;
+        document.getElementById('rightDiv').style.background = "rgba(100,8,162,0.7)";
+        document.getElementById('leftDiv').style.background = "rgba(70,162,8,0.7)";
       }
     }
     var row           =  Math.floor(index/3);
@@ -60,7 +67,7 @@ TicTacApp.controller('TicTacController', function ($scope) {
 
   // FIREBASE CHAT BOX ON GAME.HTML
   var myDataRef = new Firebase('https://tictactoe1.firebaseio.com/chat');
-    $('#messageInput').keypress(function (e) { if (e.keyCode == 13) { var name = $('#nameInput').val(); var text = $('#messageInput').val();
+    $('#messageInput').keypress(function (e) { if (e.keyCode == 37) { var name = 'Guest' + Math.floor(Math.random() * 101); var text = $('#messageInput').val();
         myDataRef.push({name: name, text: text}); $('#messageInput').val(''); }});
         myDataRef.on('child_added', function(snapshot) { var message = snapshot.val(); displayChatMessage(message.name, message.text); });
     function displayChatMessage(name, text) { $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
