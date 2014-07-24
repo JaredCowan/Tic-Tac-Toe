@@ -1,7 +1,7 @@
 /* Body BackGround IMG Animation */
 
 body {
-	background: rgb(35,35,35) url('img/bigbg.png') repeat-x 100% 920px;
+	background: rgb(35,35,35) url('img/bigbg.png') repeat-x 100% 1100px;
 	background-size: 1100px;
 }
 

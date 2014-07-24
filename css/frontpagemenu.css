@@ -93,6 +93,10 @@
     top: -158px;
     left: 100px;
 }
+.topmain {
+    background: url('../Animation/img/a.png') no-repeat;
+    background-size: 200px  200px;
+}
 
 .cube {
     -webkit-transition: -webkit-transform 1s linear;
