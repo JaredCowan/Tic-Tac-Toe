@@ -1,16 +1,7 @@
 var TicTacApp = angular.module('TicTacApp', ["firebase"]);
 TicTacApp.controller('TicTacController', function ($scope, $firebase) {
 
-  var html = document.getElementsByTagName('html')[0];
-    var removeLoading = function() {
-    setTimeout(function() {
-    html.className = html.className.replace(/loading/, '');
-    }, 3000);
-    };
-    removeLoading();
-
-
-var TTTref = new Firebase("https://tictactoe1.firebaseio.com/");
+var TTTref = new Firebase("https://tictactoe1.firebaseio.com/remoteCellList");
               
   // INITIATE GAME CELLS AND AND GRID LAYOUT
   $scope.cells      = ['','','','','','','','',''];
@@ -22,8 +13,8 @@ var TTTref = new Firebase("https://tictactoe1.firebaseio.com/");
 
   $scope.movesCount = $firebase(new Firebase("https://tictactoe1.firebaseIO.com/movesCount"));
   $scope.remoteCellList = $firebase(new Firebase("https://tictactoe1.firebaseIO.com" + '/remoteCellList')) ;
-  $scope.remoteCellList.$bind($scope, "cellList");
-  $scope.$watch('cellList', function() {
+  $scope.remoteCellList.$bind($scope, "grid");
+  $scope.$watch('grid', function() {
     console.log('Model changed!') ;
   });
   $scope.playerPicks = function(thisCell) {
