@@ -2,12 +2,12 @@
 <html x-ng-app="TicTacApp">
 <head>
   <title>Tic-Tac-Toe</title>
-  <script type="text/javascript" src="js/angular.js"></script>
-  <script src="main.js"></script>
   <link rel="stylesheet" href="css/style.css"/>
   <link rel="stylesheet" href="css/touch.css" />
-  <script src='https://cdn.firebase.com/js/client/1.0.17/firebase.js'></script>
+  <script type="text/javascript" src="js/angular.js"></script>
+  <script src="main.js"></script>
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+  <script src='https://cdn.firebase.com/js/client/1.0.17/firebase.js'></script>
   <script src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js"></script>
 </head>
 <body x-ng-controller="TicTacController" class="experiment">
@@ -30,7 +30,6 @@
     <br /><br />
     <p id="p2_score">Wins:<br/>{{ rightScore }}</p>
     <p id="right_message">   {{ rightMessage }}</p>
-    {{ moves }}
   </div>
   <center>
     <img id="tttlogo" src="Animation/img/tttlogo.png"><br />

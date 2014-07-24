@@ -11,10 +11,20 @@ var TTTref = new Firebase("https://tictactoe1.firebaseio.com/");
   ];
 
   $scope.movesCount = $firebase(new Firebase("https://tictactoe1.firebaseIO.com/movesCount"));
-  $scope.grid.$bind($scope, "grid");
+  $scope.remoteCellList = $firebase(new Firebase("https://tictactoe1.firebaseIO.com" + '/remoteCellList')) ;
+  $scope.remoteCellList.$bind($scope, "cellList");
   $scope.$watch('cellList', function() {
     console.log('Model changed!') ;
-  }) ;
+  });
+  $scope.playerPicks = function(thisCell) {
+      console.log("Cell was: " + thisCell.cells) ;
+  thisCell.cells = "x" ;
+      console.log("Cell is now: " + thisCell.cells) ;
+  console.log($scope.movesCount) ;
+    // $scope.movesCount = $scope.movesCount + 1 ;
+    console.log(TTTRef.movesCounter);
+    $scope.movesCounter.$set({movesCounter: $scope.movesCount}) ;
+  }
 
 
   // DISABLE SPACEBAR FROM SCROLLING DOWN PAGE. ALLOWS SPACEBAR TO ROTATE CUBE 180DEG.
@@ -27,7 +37,7 @@ var TTTref = new Firebase("https://tictactoe1.firebaseio.com/");
 
   
   // INITIATES GENERAL GAME BOOLEANS, VALUES AND VARIABLES FOR 'MOVES' 'GAMEOVER' 'SCORE' 'CELLS' 'EMPTY'
-  $scope.currentMark =  'o'; $scope.empty      = true; $scope.moves  =             0; $scope.gameover  =  false;
+  $scope.currentMark =  'o'; $scope.empty      = true; $scope.movesCount  =        0; $scope.gameover  =  false;
   $scope.leftScore   =    0; $scope.rightScore =    0; $scope.cells  =  $scope.cells; $scope.showbtn   =  false;
   $scope.turn1       = true; // Sets 'x' as true on start for "your turn" image to show.
 
@@ -38,14 +48,14 @@ var TTTref = new Firebase("https://tictactoe1.firebaseio.com/");
       if ($scope.currentMark == 'o') {
         $scope.cells[index]     = 'x';
         $scope.currentMark      = 'x';
-        $scope.moves               ++;
+        $scope.movesCount          ++;
         $scope.turn1 = false; $scope.turn2 = true;
         document.getElementById( 'leftDiv').style.background =  "rgba(255,0,0,0.3)";
         document.getElementById('rightDiv').style.background = "rgba(70,162,8,0.7)";
     } else {
         $scope.cells[index]     = 'o';
         $scope.currentMark      = 'o';
-        $scope.moves               ++;
+        $scope.movesCount          ++;
         $scope.turn1 = true; $scope.turn2 = false;
         document.getElementById('rightDiv').style.background = "rgba(100,8,162,0.7)";
         document.getElementById( 'leftDiv').style.background =  "rgba(70,162,8,0.7)";
@@ -61,7 +71,7 @@ var TTTref = new Firebase("https://tictactoe1.firebaseio.com/");
     var grid = $scope.grid;
     if (grid[0][0] == "x" && grid[0][1] == "x" && grid[0][2] == "x" || grid[1][0] == "x" && grid[1][1] == "x" && grid[1][2] == "x" || grid[2][0] == "x" && grid[2][1] == "x" && grid[2][2] == "x" || grid[0][0] == "x" && grid[1][0] == "x" && grid[2][0] == "x" || grid[0][1] == "x" && grid[1][1] == "x" && grid[2][1] == "x" || grid[0][2] == "x" && grid[1][2] == "x" && grid[2][2] == "x" || grid[0][0] == "x" && grid[1][1] == "x" && grid[2][2] == "x" || grid[0][2] == "x" && grid[1][1] == "x" && grid[2][0] == "x") {
       $scope.xwin(); } else if     (grid[0][0] == "o" && grid[0][1] == "o" && grid[0][2] == "o" || grid[1][0] == "o" && grid[1][1] == "o" && grid[1][2] == "o" || grid[2][0] == "o" && grid[2][1] == "o" && grid[2][2] == "o" || grid[0][0] == "o" && grid[1][0] == "o" && grid[2][0] == "o" || grid[0][1] == "o" && grid[1][1] == "o" && grid[2][1] == "o" || grid[0][2] == "o" && grid[1][2] == "o" && grid[2][2] == "o" || grid[0][0] == "o" && grid[1][1] == "o" && grid[2][2] == "o" || grid[0][2] == "o" && grid[1][1] == "o" && grid[2][0] == "o") {
-      $scope.owin(); } else if ($scope.moves == 9) {
+      $scope.owin(); } else if ($scope.movesCount == 9) {
       $scope.leftMessage  = "It's a draw..."; $scope.rightMessage = "It's a draw...";
       $scope.messagebox   =                       document.getElementById('message');
       $scope.gameover     = true;
@@ -80,7 +90,7 @@ var TTTref = new Firebase("https://tictactoe1.firebaseio.com/");
 
   // CLEARBOARD FUNCTION FOR 'NEWGAME' BUTTON ON GAME.HTML. CLEARS EVERYTHING EXCEPT FOR WIN/LOSS COUNT AND PLAYER NAMES.
   $scope.clearBoard     = function() { for (var j = 0; j < $scope.cells.length; j++) { $scope.cells[j]          = ''; }
-    $scope.leftMessage  = ""; $scope.rightMessage = ""; $scope.currentMark = 'o'; $scope.empty =  true; $scope.moves =  0;
+    $scope.leftMessage  = ""; $scope.rightMessage = ""; $scope.currentMark = 'o'; $scope.empty =  true; $scope.movesCount =  0;
     $scope.gameover     = false;      $scope.grid = [[ "" , "" , "" ], [ "" , "" , "" ], [ "" , "" , "" ]];   };
 
   // FIREBASE CHAT BOX ON GAME.HTML
