@@ -50,12 +50,19 @@ h2 {
     height:           500px;
     width:            500px;
     padding:           20px;
-    background-color: black;
+    background-color:  #000;
     font-size:          1em;
     line-height:        1em;
     color:             #fff;
     border:  1px solid #555;
     border-radius:      3px;
+    -webkit-animation:  cubediv 3s infinite alternate;
+}
+
+@-webkit-keyframes cubediv {
+  40%  {background-color:  rgb(42,42,42); border-color: rgb(85,161,151); }
+  80%  {background-color:  rgb(29,29,29); border-color: rgb(70,162,8);   }
+  100% {background-color:  rgb(26,26,26); border-color: rgb(100,8,162); }
 }
 
 .cube > div:first-child  {
