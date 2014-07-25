@@ -21,9 +21,9 @@ h2 {
     margin:   0 auto 100px;
     height:          468px;
     width:           468px;
-    -webkit-transform:      rotateX(-10deg) rotateY (20deg);
-    -moz-transform:          rotateX(-10deg) rotateY(20deg);
-    transform:               rotateX(-10deg) rotateY(20deg);
+    -webkit-transform:      rotateX(-30deg) rotateY (30deg);
+    -moz-transform:          rotateX(-30deg) rotateY(30deg);
+    transform:               rotateX(-30deg) rotateY(30deg);
     -webkit-transition:       -webkit-transform 50ms linear;
     -moz-transition:             -moz-transform 50ms linear;
     transition:                       transform 50ms linear;

@@ -18,8 +18,8 @@ $(function(){
         },
         touch = document.ontouchmove !== undefined,
         viewport = {
-            x: -10,
-            y: 20,
+            x: -30,
+            y: 30,
             el: $('.cube')[0],
             move: function(coords) {
                 if(coords) {
@@ -30,7 +30,7 @@ $(function(){
                 this.el.style[transformProp] = "rotateX("+this.x+"deg) rotateY("+this.y+"deg)";
             },
             reset: function() {
-                this.move({x: 0, y: 0});
+                this.move({x: -30, y: 30});
             }
         };
 
