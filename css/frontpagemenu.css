@@ -57,7 +57,7 @@
 
 .leftFace {
   -webkit-transform: skew(0deg, 30deg);
-  background-color:  #ccc;
+  background-color:  #fff;
   -moz-transform:    skew(0deg, 30deg);
   -ms-transform:     skew(0deg, 30deg);
   -o-transform:      skew(0deg, 30deg);
@@ -85,6 +85,7 @@
   transform:         skew(0deg, -30deg) scale(1, 1.16);
   font-size:         0.862em;
   background-color:  #eee;
+  /*border: solid 3px white;*/
 }
 
 .topFace {
