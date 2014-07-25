@@ -104,6 +104,49 @@ p {
   color:       rgb(213,180,2);
   margin:           10px 2.5px;
 }
+
+#p1_score {
+  position: fixed;
+  left: 0;
+  top: 255px;
+  width: inherit;
+}
+
+#p1_name {
+  position: fixed;
+  left: 3.9%;
+  top: 192px;
+  width: inherit;
+}
+
+#p1turn {
+  position: fixed;
+  left: -1.6%;
+  top: 58px;
+  z-index: -1;
+}
+
+#p2_score {
+  position: fixed;
+  right: 0;
+  top: 255px;
+  width: inherit;
+}
+
+#p2_name {
+  position: fixed;
+  right: 3.9%;
+  top: 192px;
+  width: inherit;
+}
+
+#p2turn {
+  position: fixed;
+  right: -1.6%;
+  top: 58px;
+  z-index: -1;
+}
+
 #p1_name:hover, #p2_name:hover {
   cursor:    auto;
   color:  #956e6e;
