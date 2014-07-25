@@ -197,20 +197,23 @@ input:focus {
 }
 .reset {
   background-color: #7f2525;
-  z-index:               10;
+  font-size:           24px;
   border-radius:        8px;
   line-height:         35px;
   text-align:        center;
-  margin:     10px 0 24px 0;
-  height:              35px;
+  margin:            0 auto;
+  height:              40px;
   color:            #c4b6a4;
-  width:              250px;
-  float:              clear;
+  width:            inherit;
+  float:               none;
+  position:           fixed;
+  top:                    0;
 }
 .reset:hover {
   background-color: #7e3f3f;
   cursor:           pointer;
   color:            #aca090;
+  border: inset;
 }
 #tttlogo {
   display:     inline-block;

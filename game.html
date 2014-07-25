@@ -22,7 +22,8 @@
       </p>
       <p> 
       <br /><br />
-      <p id="p1_score">Wins: {{ leftScore }} <br/>Moves: {{ p1moves }}<br/> <span id="left_message">{{ leftMessage }}</span>
+      <p id="p1_score">Wins: {{ leftScore }} <br/>Moves: {{ p1moves }}<br/> <span id="left_message">{{ leftMessage }}<br/></span>
+      <div class="reset" ng-show="showbtn" ng-click="clearBoard()"> New Game </div> 
       </p>
       </p>
     </div>
@@ -33,14 +34,14 @@
       </p>
       <br /><br />
       <p> 
-      <p id="p2_score">Wins:  {{ rightScore }} <br/>Moves: {{ p2moves }}<br/>  <span id="right_message">{{ rightMessage }}</span> 
+      <p id="p2_score">Wins:  {{ rightScore }} <br/>Moves: {{ p2moves }}<br/>  <span id="right_message">{{ rightMessage }}<br/></span>
+      <div class="reset" ng-show="showbtn" ng-click="clearBoard()"> New Game </div> 
       </p>
     </div>
     <center>
   <article id="tttlogo">Tic-Tac-ToyStory</article><br />
-  <div class="reset" ng-show="showbtn" ng-click="clearBoard()"> New Game </div>
   </center>
-  <article class="viewport">
+    <article class="viewport">
     <section class="cube">
       <div class="board two">
         <div class="innerbox" id="test" x-ng-repeat="cell in cells track by $index" ng-click="drawMark($index);" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o'}">
@@ -74,6 +75,6 @@
       </div>
     </section>
   </article>
-<script src="js/touch.js"></script>
+  <script src="js/touch.js"></script>
 </body>
 </html>
