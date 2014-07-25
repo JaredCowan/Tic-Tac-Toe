@@ -1,5 +1,6 @@
 body {
-  background: url('images/foreground.png') 5% 5%, url('images/midground.png') 50% 50%, url('images/background.png') 90% 110%;
+  background: url('images/foreground.png') 5% 5%, url('images/midground.png') 50% 50%, url('images/buzzbg.jpg') no-repeat 110%;
+  background-size: cover;
   background-color: rgb(35,35,35);
   -webkit-user-select:       none;
   -moz-user-select:          none;
@@ -132,7 +133,7 @@ p {
   background-color: rgb(100,8,162);
 }
 #p1turn, #p2turn {
-  background: url('http://etereman.com/remanu/wp-content/uploads/2012/06/YourTurnArrow.png') no-repeat center;
+  background: url('images/YourTurnArrow.png') no-repeat center;
   background-size:  140px 120px;
   height:                 150px;
   margin:                0 auto;
