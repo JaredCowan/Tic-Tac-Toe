@@ -75,6 +75,7 @@
                    url('images/background.png');
   background-size:                  200px 200px;
   left:                                   200px;
+  color: #fff;
 }
 .topmain,
 .topFace div {
@@ -85,7 +86,6 @@
   transform:         skew(0deg, -30deg) scale(1, 1.16);
   font-size:         0.862em;
   background-color:  #eee;
-  /*border: solid 3px white;*/
 }
 
 .topFace {
@@ -143,3 +143,7 @@
   -o-transform:      translate(202px, 115px);
   transform:         translate(202px, 115px);
 }
+#twoplayer {
+    background: url('images/twoplayer.png')!important;
+}
+
