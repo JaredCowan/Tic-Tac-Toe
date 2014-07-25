@@ -1,7 +1,7 @@
-var TicTacApp = angular.module('TicTacApp', ["firebase"]);
-TicTacApp.controller('TicTacController', function ($scope, $firebase) {
+var TicTacApp = angular.module('TicTacApp', []);
+TicTacApp.controller('TicTacController', function ($scope) {
 
-var TTTref = new Firebase("https://tictactoe1.firebaseio.com/remoteCellList");
+// var TTTref = new Firebase("https://tictactoe1.firebaseio.com/remoteCellList");
               
   // INITIATE GAME CELLS AND AND GRID LAYOUT
   $scope.cells      = ['','','','','','','','',''];
@@ -97,11 +97,5 @@ var TTTref = new Firebase("https://tictactoe1.firebaseio.com/remoteCellList");
     $scope.leftMessage  = ""; $scope.rightMessage = ""; $scope.currentMark = 'o'; $scope.empty =  true; $scope.movesCount =  0;
     $scope.gameover     = false;      $scope.grid = [[ "" , "" , "" ], [ "" , "" , "" ], [ "" , "" , "" ]];   };
 
-  // FIREBASE CHAT BOX ON GAME.HTML
-  var myDataRef = new Firebase('https://tictactoe1.firebaseio.com/chat');
-    $('#messageInput').keypress(function (e) { if (e.keyCode == 13) { var name = 'Guest' + Math.floor(Math.random() * 101); var text = $('#messageInput').val();
-        myDataRef.push({name: name, text: text}); $('#messageInput').val(''); }});
-        myDataRef.on('child_added', function(snapshot) { var message = snapshot.val(); displayChatMessage(message.name, message.text); });
-    function displayChatMessage(name, text) { $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
-      $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight; };})
-  // END FIREBASE CHAT BOX
+})
+// END
