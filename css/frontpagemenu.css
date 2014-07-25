@@ -138,8 +138,8 @@
 
 .cube:hover {
   -webkit-transform: translate(202px, 115px);
-  -moz-transform: translate(202px, 115px);
-  -o-transform: translate(202px, 115px);
-  -ms-transform: translate(202px, 115px);
-  transform: translate(202px, 115px);
+  -moz-transform:    translate(202px, 115px);
+  -ms-transform:     translate(202px, 115px);
+  -o-transform:      translate(202px, 115px);
+  transform:         translate(202px, 115px);
 }
