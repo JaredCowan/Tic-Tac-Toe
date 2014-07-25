@@ -3,8 +3,8 @@
   <head>
     <title>Tic-Tac-Toe Animation</title>
     <link rel="stylesheet" href="Animation/main.css"/>
-    <link rel="stylesheet" href="Animation/animation.css"/>
     <link rel="stylesheet" href="css/frontpagemenu.css" />
+    <link rel="stylesheet" href="Animation/animation.css"/>
     <link rel="stylesheet" href="Animation/loading.css">
     <!-- Images and animation need time to load -->
     <script>
@@ -17,9 +17,10 @@
     removeLoading();
     </script>
   </head>
-  <body class="cubeTopLevel">
+  <body>
+  <div class=" cubeTopLevel">
     <div class="wrapper">
-      <div id="cubeTopLevel">
+      <div id="cubeTopLevel" class="play twoplayer">
         <div class="cube">
           <div class="topFace">
             <div class="topfirst">
@@ -71,6 +72,7 @@
           </div>
         </div>
       </div>
+    </div>
       <!-- <a href="#">
         <img class="play oneplayer" src="img/oneplayer.png">
       </a>  --><br />

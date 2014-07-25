@@ -28,6 +28,11 @@ img {
 .play {
   width:       550px;
   height:       90px;
+  position: relative;
+}
+.menuplay {
+  width:       550px;
+  height:       90px;
   position: absolute;
 }
 .oneplayer {
