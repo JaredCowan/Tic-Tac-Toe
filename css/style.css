@@ -20,7 +20,7 @@ body {
   z-index:                           0;
   position:                   absolute;
   margin:                            0;
-  height:                        929px;
+  height:                        100%;
   width:                         230px;
   float:                          left;
   color:                rgb(213,180,2);
@@ -221,6 +221,8 @@ input:focus {
   font-family: 'Changa One', cursive;
   overflow: hidden;
   white-space: nowrap;
+  -webkit-text-stroke: 1px rgb(70,162,8);;
+  text-shadow: 4px 6px 12px rgb(100,8,162);
 }
 .player1 {
   background: url('../Animation/img/tttx.png') no-repeat center;
