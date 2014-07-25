@@ -4,86 +4,76 @@
     <title>Tic-Tac-Toe</title>
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="css/touch.css" />
-
     <link href='https://fonts.googleapis.com/css?family=Changa+One' rel='stylesheet' type='text/css'>
-      <link href='https://fonts.googleapis.com/css?family=Changa+One' rel='stylesheet' type='text/css'/>
-      <script type="text/javascript" src="js/angular.js"></script>
-      <script src="https://cdn.firebase.com/v0/firebase.js"></script>
-      <script src="https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js"></script>
-      <!-- <script src='https://cdn.firebase.com/js/client/1.0.17/firebase.js'></script> -->
-      <!-- <script src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js"></script> -->
-      <script src="main.js"></script>
-      <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
-    </head>
-    <body x-ng-controller="TicTacController">
-      <div class="left" id="leftDiv">
-        <br/><br/>
-        <div id="p1turn" ng-show="turn1"></div>
-        <p><input type="text" id="p1_name" ng-model="player1Name" ng-init="player1Name = 'Player 1'" ng-click="setName1(player1Name)" ng-keyup="removeFocus1($event)" Placeholder="Player 1"/>
-        </p>
-        <p> 
-        <br /><br />
-        <p id="p1_score">Wins: {{ leftScore }} <br/>Moves: {{ p1moves }}<br/> <span id="left_message">{{ leftMessage }}</span>
-        </p>
-        </p>
-      </div>
-      <div class="right" id="rightDiv">
-        <br /><br />
-        <div id="p2turn" ng-show="turn2"></div>
-        <p><input type="text" id="p2_name" ng-model="player2Name" ng-init="player2Name = 'Player 2'" ng-click="setName2(player2Name)" ng-keyup="removeFocus2($event)" placeholder="Player 2"/>
-        </p>
-        <br /><br />
-        <p> 
-        <p id="p2_score">Wins:  {{ rightScore }} <br/>Moves: {{ p2moves }}<br/>  <span id="right_message">{{ rightMessage }}</span> 
-        </p>
-      </div>
-      <center>
-    <article id="tttlogo">Tic-Tac-Toe</article><br />
-    <div class="reset" ng-show="showbtn" ng-click="clearBoard()"> New Game </div>
-    </center>
-    <article class="viewport">
-      <section class="cube">
-        <div class="board two">
-          <div class="innerbox" id="test" x-ng-repeat="cell in cells track by $index" ng-click="drawMark($index);" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o'}">
-            {{cell}}
-          </div>
-        </div>
-        <div class="board">
-          <div class="innerbox" x-ng-repeat="cell in cells track by $index" ng-click="drawMark($index);" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o'}">
-            {{cell}}
-          </div>
-        </div>
-        <div class="board">
-          <div class="innerbox" x-ng-repeat="cell in cells track by $index" ng-click="drawMark($index);" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o'}">
-            {{cell}}
-          </div>
-        </div>
-        <div class="board">
-          <div class="innerbox" x-ng-repeat="cell in cells track by $index" ng-click="drawMark($index);" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o'}">
-            {{cell}}
-          </div>
-        </div>
-        <div class="board">
-          <div class="innerbox" x-ng-repeat="cell in cells track by $index" ng-click="drawMark($index);" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o'}">
-            {{cell}}
-          </div>
-        </div>
-        <div class="board">
-          <div class="innerbox" x-ng-repeat="cell in cells track by $index" ng-click="drawMark($index);" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o'}">
-            {{cell}}
-          </div>
-        </div>
-      </section>
-    </article>
-    <br /><br /><br />
-    
-    <div id='messagesDiv'>
+    <link href='https://fonts.googleapis.com/css?family=Changa+One' rel='stylesheet' type='text/css'/>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js"></script>
+    <!-- <script src='https://cdn.firebase.com/js/client/1.0.17/firebase.js'></script> -->
+    <!-- <script src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js"></script> -->
+    <script src="main.js"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+  </head>
+  <body x-ng-controller="TicTacController">
+    <div class="left" id="leftDiv">
+      <br/><br/>
+      <div id="p1turn" ng-show="turn1"></div>
+      <p><input type="text" id="p1_name" ng-model="player1Name" ng-init="player1Name = 'Player 1'" ng-click="setName1(player1Name)" ng-keyup="removeFocus1($event)" Placeholder="Player 1"/>
+      </p>
+      <p> 
+      <br /><br />
+      <p id="p1_score">Wins: {{ leftScore }} <br/>Moves: {{ p1moves }}<br/> <span id="left_message">{{ leftMessage }}</span>
+      </p>
+      </p>
+    </div>
+    <div class="right" id="rightDiv">
+      <br /><br />
+      <div id="p2turn" ng-show="turn2"></div>
+      <p><input type="text" id="p2_name" ng-model="player2Name" ng-init="player2Name = 'Player 2'" ng-click="setName2(player2Name)" ng-keyup="removeFocus2($event)" placeholder="Player 2"/>
+      </p>
+      <br /><br />
+      <p> 
+      <p id="p2_score">Wins:  {{ rightScore }} <br/>Moves: {{ p2moves }}<br/>  <span id="right_message">{{ rightMessage }}</span> 
+      </p>
     </div>
     <center>
-    <input type='text' id='messageInput' placeholder='Message'>
-    </center>
-  </div>
-</div>
+  <article id="tttlogo">Tic-Tac-ToyStory</article><br />
+  <div class="reset" ng-show="showbtn" ng-click="clearBoard()"> New Game </div>
+  </center>
+  <article class="viewport">
+    <section class="cube">
+      <div class="board two">
+        <div class="innerbox" id="test" x-ng-repeat="cell in cells track by $index" ng-click="drawMark($index);" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o'}">
+          {{cell}}
+        </div>
+      </div>
+      <div class="board">
+        <div class="innerbox" x-ng-repeat="cell in cells track by $index" ng-click="drawMark($index);" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o'}">
+          {{cell}}
+        </div>
+      </div>
+      <div class="board">
+        <div class="innerbox" x-ng-repeat="cell in cells track by $index" ng-click="drawMark($index);" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o'}">
+          {{cell}}
+        </div>
+      </div>
+      <div class="board">
+        <div class="innerbox" x-ng-repeat="cell in cells track by $index" ng-click="drawMark($index);" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o'}">
+          {{cell}}
+        </div>
+      </div>
+      <div class="board">
+        <div class="innerbox" x-ng-repeat="cell in cells track by $index" ng-click="drawMark($index);" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o'}">
+          {{cell}}
+        </div>
+      </div>
+      <div class="board">
+        <div class="innerbox" x-ng-repeat="cell in cells track by $index" ng-click="drawMark($index);" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o'}">
+          {{cell}}
+        </div>
+      </div>
+    </section>
+  </article>
 <script src="js/touch.js"></script>
 </body>
 </html>
