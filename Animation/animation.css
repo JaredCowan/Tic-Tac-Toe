@@ -6,11 +6,10 @@ body {
 	-webkit-animation: bg-move 8s 5s ease-in-out forwards;
 }
 .play {
-	-webkit-animation: play-move 2s 13s ease-in-out forwards;
-	                   /*play-float 1.8s infinite;*/
+	-webkit-animation: play-move 4s 13s ease-in-out forwards;
 }
 .menuplay {
-	-webkit-animation: menuplay-move 2s 13s ease-in-out forwards,
+	-webkit-animation: menuplay-move 4s 13s ease-in-out forwards,
 }
 
 /*==============================*/
