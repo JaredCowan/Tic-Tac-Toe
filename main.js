@@ -11,21 +11,21 @@ var TTTref = new Firebase("https://tictactoe1.firebaseio.com/remoteCellList");
       [ "" , "" , "" ]
   ];
 
-  $scope.movesCount = $firebase(new Firebase("https://tictactoe1.firebaseIO.com/movesCount"));
-  $scope.remoteCellList = $firebase(new Firebase("https://tictactoe1.firebaseIO.com/remoteCellList" + Math.floor(Math.random() * 101))) ;
-  $scope.remoteCellList.$bind($scope, "grid");
-  $scope.$watch('grid', function() {
-    console.log('Model changed!') ;
-  });
-  $scope.playerPicks = function(thisCell) {
-      console.log("Cell was: " + thisCell.cells) ;
-  thisCell.cells = "x" ;
-      console.log("Cell is now: " + thisCell.cells) ;
-  console.log($scope.movesCount) ;
-    $scope.movesCount = $scope.movesCount + 1 ;
-    console.log(TTTRef.movesCounter);
-    $scope.movesCount.$set({movesCount: $scope.movesCount});
-  }
+  // $scope.movesCount     = $firebase(new Firebase("https://tictactoe1.firebaseIO.com/movesCount"));
+  // $scope.remoteCellList = $firebase(new Firebase("https://tictactoe1.firebaseIO.com/remoteCellList" + Math.floor(Math.random() * 101))) ;
+  // $scope.remoteCellList.$bind($scope, "grid");
+  // $scope.$watch('grid', function() {
+  //   console.log('Model changed!') ;
+  // });
+  // $scope.playerPicks = function(thisCell) {
+  //     console.log("Cell was: " + thisCell.cells) ;
+  // thisCell.cells = "x" ;
+  //     console.log("Cell is now: " + thisCell.cells) ;
+  // console.log($scope.movesCount) ;
+  //   $scope.movesCount = $scope.movesCount + 1 ;
+  //   console.log(TTTRef.movesCounter);
+  //   $scope.movesCount.$set({movesCount: $scope.movesCount});
+  // }
 
 
   // DISABLE SPACEBAR FROM SCROLLING DOWN PAGE. ALLOWS SPACEBAR TO ROTATE CUBE 180DEG.
@@ -40,6 +40,7 @@ var TTTref = new Firebase("https://tictactoe1.firebaseio.com/remoteCellList");
   // INITIATES GENERAL GAME BOOLEANS, VALUES AND VARIABLES FOR 'MOVES' 'GAMEOVER' 'SCORE' 'CELLS' 'EMPTY'
   $scope.currentMark =  'o'; $scope.empty      = true; $scope.movesCount  =        0; $scope.gameover  =  false;
   $scope.leftScore   =    0; $scope.rightScore =    0; $scope.cells  =  $scope.cells; $scope.showbtn   =  false;
+  $scope.p1moves     =    0; $scope.p2moves    =    0;
   $scope.turn1       = true; // Sets 'x' as true on start for "your turn" image to show.
 
   // RESPONSIBLE FOR ASSIGING 'X' && 'O' VALUES TO BOARD AND RAISE 'MOVES' COUNT. CHECKS CURRENT PLAYER FOR NEXT TURN.
@@ -50,6 +51,7 @@ var TTTref = new Firebase("https://tictactoe1.firebaseio.com/remoteCellList");
         $scope.cells[index]     = 'x';
         $scope.currentMark      = 'x';
         $scope.movesCount          ++;
+        $scope.p1moves             ++;
         $scope.turn1 = false; $scope.turn2 = true;
         document.getElementById( 'leftDiv').style.background =  "rgba(255,0,0,0.3)";
         document.getElementById('rightDiv').style.background = "rgba(70,162,8,0.7)";
@@ -57,6 +59,7 @@ var TTTref = new Firebase("https://tictactoe1.firebaseio.com/remoteCellList");
         $scope.cells[index]     = 'o';
         $scope.currentMark      = 'o';
         $scope.movesCount          ++;
+        $scope.p2moves             ++;
         $scope.turn1 = true; $scope.turn2 = false;
         document.getElementById('rightDiv').style.background = "rgba(100,8,162,0.7)";
         document.getElementById( 'leftDiv').style.background =  "rgba(70,162,8,0.7)";
