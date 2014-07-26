@@ -1,7 +1,7 @@
-var TicTacApp = angular.module('TicTacApp', []);
-TicTacApp.controller('TicTacController', function ($scope) {
+var TicTacApp = angular.module('TicTacApp', ["firebase"]);
+TicTacApp.controller('TicTacController', function ($scope, $firebase) {
 
-// var TTTref = new Firebase("https://tictactoe1.firebaseio.com/remoteCellList");
+var TTTref = new Firebase("https://tictactoe1.firebaseio.com/remoteCellList");
               
   // INITIATE GAME CELLS AND AND GRID LAYOUT
   $scope.cells      = ['','','','','','','','',''];
@@ -11,21 +11,21 @@ TicTacApp.controller('TicTacController', function ($scope) {
       [ "" , "" , "" ]
   ];
 
-  // $scope.movesCount     = $firebase(new Firebase("https://tictactoe1.firebaseIO.com/movesCount"));
-  // $scope.remoteCellList = $firebase(new Firebase("https://tictactoe1.firebaseIO.com/remoteCellList" + Math.floor(Math.random() * 101))) ;
-  // $scope.remoteCellList.$bind($scope, "grid");
-  // $scope.$watch('grid', function() {
-  //   console.log('Model changed!') ;
-  // });
-  // $scope.playerPicks = function(thisCell) {
-  //     console.log("Cell was: " + thisCell.cells) ;
-  // thisCell.cells = "x" ;
-  //     console.log("Cell is now: " + thisCell.cells) ;
-  // console.log($scope.movesCount) ;
-  //   $scope.movesCount = $scope.movesCount + 1 ;
-  //   console.log(TTTRef.movesCounter);
-  //   $scope.movesCount.$set({movesCount: $scope.movesCount});
-  // }
+  $scope.movesCount     = $firebase(new Firebase("https://tictactoe1.firebaseIO.com/movesCount"));
+  $scope.remoteCellList = $firebase(new Firebase("https://tictactoe1.firebaseIO.com/remoteCellList" + Math.floor(Math.random() * 101))) ;
+  $scope.remoteCellList.$bind($scope, "grid");
+  $scope.$watch('grid', function() {
+    console.log('Model changed!') ;
+  });
+  $scope.playerPicks = function(thisCell) {
+      console.log("Cell was: " + thisCell.cells) ;
+  thisCell.cells = "x" ;
+      console.log("Cell is now: " + thisCell.cells) ;
+  console.log($scope.movesCount) ;
+    $scope.movesCount = $scope.movesCount + 1 ;
+    console.log(TTTRef.movesCounter);
+    $scope.movesCount.$set({movesCount: $scope.movesCount});
+  }
 
 
   // DISABLE SPACEBAR FROM SCROLLING DOWN PAGE. ALLOWS SPACEBAR TO ROTATE CUBE 180DEG.
@@ -65,8 +65,8 @@ TicTacApp.controller('TicTacController', function ($scope) {
         document.getElementById( 'leftDiv').style.background =  "rgba(70,162,8,0.7)";
       }
     }
-    var row               =  Math.floor(index/3);
-    var column            =          (index % 3);
+    var row                  =  Math.floor(index/3);
+    var column               =          (index % 3);
     $scope.grid[row][column] =   $scope.currentMark;
     if ($scope.gameover == false) $scope.evaluateWin(); }
 
