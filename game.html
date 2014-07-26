@@ -17,25 +17,26 @@
   <body x-ng-controller="TicTacController">
     <div class="left" id="leftDiv">
       <br/><br/>
-      <div id="p1turn" ng-show="turn1"></div>
-      <p><input type="text" id="p1_name" ng-model="player1Name" ng-init="player1Name = 'Player 1'" ng-click="setName1(player1Name)" ng-keyup="removeFocus1($event)" Placeholder="Player 1"/>
+      <div id="p1turn" x-ng-show="turn1"></div>
+      <p><input type="text" id="p1_name" x-ng-model="player1Name" x-ng-init="player1Name = 'Player 1'" x-ng-click="setName1(player1Name)" x-ng-keyup="removeFocus1($event)" Placeholder="Player 1"/>
       </p>
       <p> 
       <br /><br />
-      <p id="p1_score">Wins: {{ leftScore }} <br/>Moves: {{ p1moves }}<br/> <span id="left_message">{{ leftMessage }}<br/></span>
-      <div class="reset" ng-show="showbtn" ng-click="clearBoard()"> New Game </div> 
+      <p id="p1_score">Wins: {{ leftScore }} <br/>Moves: {{ p1moves }}<br/> <span id="left_message">{{ leftMessage }}<br/></span> 
+      <div class="reset" x-ng-show="showbtn" x-ng-click="clearBoard()"> New Game </div>
       </p>
       </p>
+
     </div>
     <div class="right" id="rightDiv">
       <br /><br />
-      <div id="p2turn" ng-show="turn2"></div>
-      <p><input type="text" id="p2_name" ng-model="player2Name" ng-init="player2Name = 'Player 2'" ng-click="setName2(player2Name)" ng-keyup="removeFocus2($event)" placeholder="Player 2"/>
+      <div id="p2turn" x-ng-show="turn2"></div>
+      <p><input type="text" id="p2_name" x-ng-model="player2Name" ng-init="player2Name = 'Player 2'" x-ng-click="setName2(player2Name)" x-ng-keyup="removeFocus2($event)" placeholder="Player 2"/>
       </p>
       <br /><br />
       <p> 
       <p id="p2_score">Wins:  {{ rightScore }} <br/>Moves: {{ p2moves }}<br/>  <span id="right_message">{{ rightMessage }}<br/></span>
-      <div class="reset" ng-show="showbtn" ng-click="clearBoard()"> New Game </div> 
+      <div class="reset" x-ng-show="showbtn" x-ng-click="clearBoard()"> New Game </div> 
       </p>
     </div>
     <center>
@@ -44,32 +45,32 @@
     <article class="viewport">
     <section class="cube">
       <div class="board two">
-        <div class="innerbox" id="test" x-ng-repeat="cell in cells track by $index" ng-click="drawMark($index);" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o'}">
+        <div class="innerbox" id="test" x-ng-repeat="cell in cells track by $index" x-ng-click="drawMark($index);" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o'}">
           {{cell}}
         </div>
       </div>
       <div class="board">
-        <div class="innerbox" x-ng-repeat="cell in cells track by $index" ng-click="drawMark($index);" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o'}">
+        <div class="innerbox" x-ng-repeat="cell in cells track by $index" x-ng-click="drawMark($index);" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o'}">
           {{cell}}
         </div>
       </div>
       <div class="board">
-        <div class="innerbox" x-ng-repeat="cell in cells track by $index" ng-click="drawMark($index);" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o'}">
+        <div class="innerbox" x-ng-repeat="cell in cells track by $index" x-ng-click="drawMark($index);" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o'}">
           {{cell}}
         </div>
       </div>
       <div class="board">
-        <div class="innerbox" x-ng-repeat="cell in cells track by $index" ng-click="drawMark($index);" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o'}">
+        <div class="innerbox" x-ng-repeat="cell in cells track by $index" x-x-ng-click="drawMark($index);" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o'}">
           {{cell}}
         </div>
       </div>
       <div class="board">
-        <div class="innerbox" x-ng-repeat="cell in cells track by $index" ng-click="drawMark($index);" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o'}">
+        <div class="innerbox" x-ng-repeat="cell in cells track by $index" x-ng-click="drawMark($index);" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o'}">
           {{cell}}
         </div>
       </div>
       <div class="board">
-        <div class="innerbox" x-ng-repeat="cell in cells track by $index" ng-click="drawMark($index);" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o'}">
+        <div class="innerbox" x-ng-repeat="cell in cells track by $index" x-ng-click="drawMark($index);" x-ng-class="{'player1':cells[$index] == 'x', 'player2':cells[$index] == 'o'}">
           {{cell}}
         </div>
       </div>

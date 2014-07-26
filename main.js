@@ -1,31 +1,99 @@
 var TicTacApp = angular.module('TicTacApp', ["firebase"]);
 TicTacApp.controller('TicTacController', function ($scope, $firebase) {
 
-var TTTref = new Firebase("https://tictactoe1.firebaseio.com/remoteCellList");
+var TicTacApp = new Firebase("https://tictactoe1.firebaseio.com/");
               
   // INITIATE GAME CELLS AND AND GRID LAYOUT
-  $scope.cells      = ['','','','','','','','',''];
+  $scope.remoteGameContainer = $firebase(new Firebase("https://tictactoe1.firebaseIO.com/databaseGameContainer" + Math.floor(Math.random() * 101)));
+
+  
+  // INITIATES GENERAL GAME BOOLEANS, VALUES AND VARIABLES FOR 'MOVES' 'GAMEOVER' 'SCORE' 'CELLS' 'EMPTY'
+  $scope.currentMark =  'o'; $scope.empty      = true; $scope.movesCount  =        0; $scope.gameover  =  false;
+  $scope.leftScore   =    0; $scope.rightScore =    0; $scope.cells  =  $scope.cells; $scope.showbtn   =  false;
+  $scope.p1moves     =    0; $scope.p2moves    =    0;
+  $scope.turn1       = true; // Sets 'x' as true on start for "your turn" image to show.
+
+
+  $scope.cells = [
+      {status: "A"},
+      {status: "B"},
+      {status: "C"},
+      {status: "D"},
+      {status: "E"},
+      {status: "F"},
+      {status: "G"},
+      {status: "H"},
+      {status: "I"} 
+  ]; 
+
+  $scope.gameContainer = {
+    celllistArray: $scope.cells,
+    clickCounter:  $scope.movesCount,
+    p1moves:       $scope.p1moves,
+    p2moves:       $scope.p2moves
+  };
+
+  $scope.remoteGameContainer.$bind($scope, "gameContainer") ;
+  $scope.$watch('gameContainer', function() {
+    console.log('gameCountainer changed!') ;
+  }) ;
+
+   $scope.$watch('gameContainer', function() {
+    console.log('gameCountainer changed!') ;
+  }) ;
+
+   // FIREBASE TESTING ONLY:
+  $scope.nakedArrayOfStrings              = ["A", "B", "C"] ;
+  $scope.nakedArrayOfIntegers             =         [1,2,3] ;
+  $scope.nakedArrayOfMixedTypes           = [3, 3.17, "pi"] ;
+  $scope.remoteArrayOfStringsContainer    = $firebase(new Firebase("https://tttbyrichard.firebaseIO.com/remoteArrayOfStrings"));
+  $scope.remoteArrayOfIntegersContainer   = $firebase(new Firebase("https://tttbyrichard.firebaseIO.com/remoteArrayOfIntegers"));
+  $scope.remoteArrayOfMixedTypesContainer = $firebase(new Firebase("https://tttbyrichard.firebaseIO.com/remoteArrayOfMixedTypes"));
+  $scope.remoteArrayOfStringsContainer.$bind($scope,       "nakedArrayOfStrings") ;
+  $scope.remoteArrayOfIntegersContainer.$bind($scope,     "nakedArrayOfIntegers") ;
+  $scope.remoteArrayOfMixedTypesContainer.$bind($scope, "nakedArrayOfMixedTypes") ;
+
+  $scope.testString = "Angular source, App, and Controller are present" ;
+
+  // When the user clicks a cell.
+  $scope.playerPicks = function(thisCell) {
+    console.log("Cell was: " + thisCell.status) ;
+    //  You need to come up with a way to set this to "O" when player 2 has a turn.
+    thisCell.status = "X" ;
+    console.log("Cell is now: " + thisCell.status) ;
+
+    // This updates the live click counter.  Not needed unless you want it, but it's also convenient
+    // to see if your model is connected properly.
+    console.log("clickCounter was:") ;
+    console.log($scope.gameContainer.clickCounter) ;
+    $scope.gameContainer.clickCounter = $scope.gameContainer.clickCounter + 1 ;
+    console.log("clickCounter was:") ;
+    console.log($scope.gameContainer.clickCounter) ;
+  } ;
+
+  
+  // $scope.cells      = ['','','','','','','','',''];
   $scope.grid       = [
       [ "" , "" , "" ],
       [ "" , "" , "" ],
       [ "" , "" , "" ]
   ];
 
-  $scope.movesCount     = $firebase(new Firebase("https://tictactoe1.firebaseIO.com/movesCount"));
-  $scope.remoteCellList = $firebase(new Firebase("https://tictactoe1.firebaseIO.com/remoteCellList" + Math.floor(Math.random() * 101))) ;
-  $scope.remoteCellList.$bind($scope, "grid");
-  $scope.$watch('grid', function() {
-    console.log('Model changed!') ;
-  });
-  $scope.playerPicks = function(thisCell) {
-      console.log("Cell was: " + thisCell.cells) ;
-  thisCell.cells = "x" ;
-      console.log("Cell is now: " + thisCell.cells) ;
-  console.log($scope.movesCount) ;
-    $scope.movesCount = $scope.movesCount + 1 ;
-    console.log(TTTRef.movesCounter);
-    $scope.movesCount.$set({movesCount: $scope.movesCount});
-  }
+  // $scope.movesCount     = $firebase(new Firebase("https://tictactoe1.firebaseIO.com/movesCount"));
+  // $scope.remoteCellList = $firebase(new Firebase("https://tictactoe1.firebaseIO.com/remoteCellList" + Math.floor(Math.random() * 101)));
+  // $scope.remoteCellList.$bind($scope, "grid");
+  // $scope.$watch('grid', function() {
+  //   console.log('Model changed!') ;
+  // });
+  // $scope.playerPicks = function(thisCell) {
+  //     console.log("Cell was: " + thisCell.cells) ;
+  // thisCell.cells = "x" ;
+  //     console.log("Cell is now: " + thisCell.cells) ;
+  // console.log($scope.movesCount) ;
+  //   $scope.movesCount = $scope.movesCount + 1 ;
+  //   console.log(TTTRef.movesCounter);
+  //   $scope.movesCount.$set({movesCount: $scope.movesCount});
+  // }
 
 
   // DISABLE SPACEBAR FROM SCROLLING DOWN PAGE. ALLOWS SPACEBAR TO ROTATE CUBE 180DEG.
@@ -37,11 +105,6 @@ var TTTref = new Firebase("https://tictactoe1.firebaseio.com/remoteCellList");
   // END SPACEBAR DISABLE FUNCTION.
 
   
-  // INITIATES GENERAL GAME BOOLEANS, VALUES AND VARIABLES FOR 'MOVES' 'GAMEOVER' 'SCORE' 'CELLS' 'EMPTY'
-  $scope.currentMark =  'o'; $scope.empty      = true; $scope.movesCount  =        0; $scope.gameover  =  false;
-  $scope.leftScore   =    0; $scope.rightScore =    0; $scope.cells  =  $scope.cells; $scope.showbtn   =  false;
-  $scope.p1moves     =    0; $scope.p2moves    =    0;
-  $scope.turn1       = true; // Sets 'x' as true on start for "your turn" image to show.
 
   // RESPONSIBLE FOR ASSIGING 'X' && 'O' VALUES TO BOARD AND RAISE 'MOVES' COUNT. CHECKS CURRENT PLAYER FOR NEXT TURN.
   // DIVIDES 'GRID' AND 'CELLS' FOR INDEXES TO BE CHECKED FOR WINNING COMBINATIONS BY 'EVALUATEWIN()'.
