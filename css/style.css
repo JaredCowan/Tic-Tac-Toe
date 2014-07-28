@@ -94,6 +94,11 @@ p {
   80%  {background-color:  rgb(70,162,8);   }
   100% {background-color:  rgb(85,161,151); }
 }
+/*@-webkit-keyframes rgb {
+  40%  {background-color:  rgb(255,42,42); border-color: rgb(85,161,151); }
+  80%  {background-color:  rgb(29,29,255); border-color: rgb(70,162,8);   }
+  100% {background-color:  rgb(26,255,26); border-color: rgb(100,8,162); }
+}*/
 .innerbox:focus {
   background-color:                   #7f766a;
   -webkit-transform:                  rotateY(-360deg);
