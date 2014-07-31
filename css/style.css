@@ -94,11 +94,6 @@ p {
   80%  {background-color:  rgb(70,162,8);   }
   100% {background-color:  rgb(85,161,151); }
 }
-/*@-webkit-keyframes rgb {
-  40%  {background-color:  rgb(255,42,42); border-color: rgb(85,161,151); }
-  80%  {background-color:  rgb(29,29,255); border-color: rgb(70,162,8);   }
-  100% {background-color:  rgb(26,255,26); border-color: rgb(100,8,162); }
-}*/
 .innerbox:focus {
   background-color:                   #7f766a;
   -webkit-transform:                  rotateY(-360deg);
@@ -120,44 +115,44 @@ p {
 
 #p1_score {
   position: fixed;
-  left: 0;
-  top: 255px;
-  width: inherit;
+  left:         0;
+  top:      255px;
+  width:  inherit;
 }
 
 #p1_name {
   position: absolute;
-  left: 15.9%;
-  top: 192px;
-  width: inherit;
+  left:        15.9%;
+  top:         192px;
+  width:     inherit;
 }
 
 #p1turn {
   position: static;
-  left: -0.6%;
-  top: 58px;
-  z-index: -1;
+  left:      -0.6%;
+  top:        58px;
+  z-index:      -1;
 }
 
 #p2_score {
   position: fixed;
-  right: 0;
-  top: 255px;
-  width: inherit;
+  right:        0;
+  top:      255px;
+  width:  inherit;
 }
 
 #p2_name {
   position: absolute;
-  right: 15.9%;
-  top: 192px;
-  width: inherit;
+  right:       15.9%;
+  top:         192px;
+  width:     inherit;
 }
 
 #p2turn {
   position: static;
-  right: -0.6%;
-  top: 58px;
-  z-index: -1;
+  right:     -0.6%;
+  top:        58px;
+  z-index:      -1;
 }
 
 #p1_name:hover, #p2_name:hover {
@@ -183,7 +178,7 @@ p {
   transition:         all 1300ms cubic-bezier(0.680, -0.950, 0.265, 1.950);
 }
 #p1_name {
-  background-color: #7f2525;
+  background-color:       #7f2525;
 }
 #p2_name {
   background-color: rgb(100,8,162);
@@ -227,8 +222,8 @@ input:focus {
   color:     rgb(213,180,2);
   margin-bottom:       40px;
   font-family: 'Changa One', cursive;
-  overflow: hidden;
-  white-space: nowrap;
+  overflow:          hidden;
+  white-space:       nowrap;
   -webkit-text-stroke: 1px rgb(70,162,8);;
   text-shadow: 4px 6px 12px rgb(100,8,162);
 }

@@ -3,13 +3,13 @@
 /*===============================*/
 
 body {
-	-webkit-animation: bg-move 8s 5s ease-in-out forwards;
+	-webkit-animation:      bg-move 8s 5s ease-in-out forwards;
 }
 .play {
-	-webkit-animation: play-move 4s 13s ease-in-out forwards;
+	-webkit-animation:    play-move 4s 13s ease-in-out forwards;
 }
 .menuplay {
-	-webkit-animation: menuplay-move 4s 13s ease-in-out forwards,
+	-webkit-animation: menuplay-move 4s 13s ease-in-out forwards;
 }
 
 /*==============================*/
@@ -91,7 +91,7 @@ body {
 
 @-webkit-keyframes bg-move {
 	0%     { background-position: -350%  1200px; }
-	100%   { background-position:  290% -510px; }
+	100%   { background-position:   290% -510px; }
 }
 @-webkit-keyframes play-move {
 	100% { left: 32.5%; }
